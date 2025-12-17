@@ -23,18 +23,18 @@ import {
 const CITY_CONTENT = {
   // Basic city information
   city: {
-    name: 'Montréal',
-    displayName: 'Montréal',
+    name: 'Chambly',
+    displayName: 'Chambly',
     year: '2025',
-    heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
+    heroImage: 'https://imgs.search.brave.com/xQZGY5yzqKLQH8KqLMH0vQJ9dYZJH0qGKWH8YqLQH8K/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLXMv/MWEvN2UvMmQvMmQv/Zm9ydC1jaGFtYmx5/LmpwZw',
   },
 
   // Available cities for the top bar
   availableCities: [
-    { name: 'Montréal', path: '/' },
+    { name: 'Montréal', path: '/montreal' },
     { name: 'Québec', path: '/quebec' },
     { name: 'Laval', path: '/laval' },
-    { name: 'Chambly', path: '/chambly' },
+    { name: 'Chambly', path: '/' },
     { name: 'Candiac', path: '/candiac' },
     { name: 'Saint-Lambert', path: '/saint-lambert' },
   ],
@@ -42,10 +42,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Chambly en 2025',
     features: [
       'Calcul instantané',
-      'Taux 2026',
+      'Taux 2025',
       '100% gratuit'
     ]
   },
@@ -55,25 +55,22 @@ const CITY_CONTENT = {
     title: 'Calculateur',
     subtitle: 'Taxe de bienvenue 2025',
     inputLabel: "Prix d'achat de la propriété",
-    inputPlaceholder: '500 000',
+    inputPlaceholder: '547 089',
     buttonText: 'Calculer maintenant',
     buttonHint: 'Appuyez sur Entrée ou cliquez sur le bouton pour calculer',
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Chambly • 2025',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2025 rates for Chambly - provincial standard rates)
   taxBrackets: [
-    { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
-    { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
-    { max: 500000, rate: 1.5, name: '294 600 $ à 500 000 $' },
-    { max: 1000000, rate: 2.0, name: '500 000 $ à 1 000 000 $' },
-    { max: 2000000, rate: 2.5, name: '1 000 000 $ à 2 000 000 $' },
-    { max: Infinity, rate: 3.0, name: 'Plus de 2 000 000 $' },
+    { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
+    { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
+    { max: Infinity, rate: 1.5, name: 'Plus de 307 800 $' },
   ],
 
   // CTA Form section
@@ -92,63 +89,60 @@ const CITY_CONTENT = {
   // Tax brackets display
   bracketsDisplay: {
     title: 'Grille des taux 2025',
-    subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
+    subtitle: 'Structure progressive des droits de mutation immobilière à Chambly',
     brackets: [
-      { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
-      { range: '58 900 $ à 294 600 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
-      { range: '294 600 $ à 500 000 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
-      { range: '500 000 $ à 1 000 000 $', rate: '2,0%', color: 'from-orange-500 to-amber-600' },
-      { range: '1 000 000 $ à 2 000 000 $', rate: '2,5%', color: 'from-red-500 to-rose-600' },
-      { range: 'Plus de 2 000 000 $', rate: '3,0%', color: 'from-slate-700 to-slate-900' },
+      { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
+      { range: '61 500 $ à 307 800 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
+      { range: 'Plus de 307 800 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
     ]
   },
 
   // City statistics
   statistics: {
-    title: 'Montréal en chiffres',
-    subtitle: 'La métropole la plus dynamique du Québec',
+    title: 'Chambly en chiffres',
+    subtitle: 'Une perle de la Montérégie',
     stats: [
-      { icon: Users, value: '4,3M', label: 'habitants en région métropolitaine' },
-      { icon: TrendingUp, value: '+4,2%', label: 'croissance démographique annuelle' },
-      { icon: Building2, value: '19', label: 'arrondissements distincts' },
-      { icon: Home, value: '925K$', label: 'prix moyen maison unifamiliale' },
+      { icon: Users, value: '31 938', label: 'habitants (2025)' },
+      { icon: TrendingUp, value: '+8%', label: 'croissance 2016-2021' },
+      { icon: Building2, value: '8', label: 'districts électoraux' },
+      { icon: Home, value: '547K$', label: 'prix moyen maison unifamiliale' },
     ]
   },
 
   // Neighborhoods
   neighborhoods: {
-    title: 'Les quartiers de Montréal',
-    subtitle: 'Découvrez les arrondissements les plus prisés pour votre investissement immobilier',
+    title: 'Les secteurs de Chambly',
+    subtitle: 'Découvrez les quartiers les plus prisés pour votre investissement immobilier',
     items: [
       {
-        name: 'Le Plateau-Mont-Royal',
-        description: 'Quartier artistique et bohème avec ses escaliers extérieurs emblématiques et sa vie culturelle dynamique.',
-        icon: '🎨',
+        name: 'Le Fort et Vieux-Chambly',
+        description: 'Cœur historique avec le Fort Chambly (1709-1711) classé lieu historique national. 279 bâtiments patrimoniaux, architecture unique et vues sur le bassin.',
+        icon: '🏰',
       },
       {
-        name: 'Ville-Marie',
-        description: 'Centre névralgique avec le Vieux-Montréal, le centre-ville et le Quartier des spectacles.',
-        icon: '🏙️',
+        name: 'Le Quartier du Bassin',
+        description: 'Développement récent prisé par les jeunes familles. Maisons modernes, parcs aménagés et accès privilégié aux activités nautiques.',
+        icon: '⛵',
       },
       {
-        name: 'Rosemont–La Petite-Patrie',
-        description: 'Ambiance familiale avec le marché Jean-Talon et des prix plus accessibles.',
+        name: 'Le Secteur des Patriotes',
+        description: 'Quartier familial par excellence avec excellentes écoles et nombreux parcs. Environnement sécuritaire et vie communautaire active.',
         icon: '👨‍👩‍👧‍👦',
       },
       {
-        name: 'Outremont',
-        description: 'Élégance et raffinement avec ses maisons bourgeoises et ses rues arborées.',
+        name: 'Chambly-Ouest',
+        description: 'Secteur résidentiel paisible développé depuis les années 1960. Arbres matures, terrains généreux et prix accessibles.',
         icon: '🌳',
       },
       {
-        name: 'Le Sud-Ouest',
-        description: 'Secteur en transformation avec le canal de Lachine et des prix attractifs.',
-        icon: '🚢',
+        name: 'Parkwood et Longwood',
+        description: 'Quartiers établis des années 1960-70 avec ambiance communautaire forte. Bungalows et maisons à étages sur terrains spacieux.',
+        icon: '🏘️',
       },
       {
-        name: 'Ahuntsic-Cartierville',
-        description: 'Tranquillité et espaces verts en bordure de la rivière des Prairies.',
-        icon: '🌊',
+        name: 'Île Demers et Île aux Lièvres',
+        description: 'Secteurs insulaires uniques et recherchés. Cadre exceptionnel en bordure de l\'eau avec vues imprenables sur le bassin.',
+        icon: '🏝️',
       },
     ]
   },
@@ -160,7 +154,7 @@ const CITY_CONTENT = {
     items: [
       {
         title: 'Accès à 20+ prêteurs',
-        description: 'Comparaison exhaustive des offres de toutes les institutions financières pour trouver le meilleur taux.',
+        description: 'Comparaison exhaustive incluant banques, Desjardins et prêteurs alternatifs pour trouver le meilleur taux.',
         icon: <Building2 className="w-8 h-8" />,
       },
       {
@@ -193,23 +187,23 @@ const CITY_CONTENT = {
 
   // Programs section
   programs: {
-    title: "Programmes d'aide disponibles",
-    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux programmes municipaux",
+    title: "Programmes d'aide et exemptions",
+    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux exemptions légales",
     items: [
       {
-        title: "Programme d'accession à la propriété",
+        title: "Exemptions légales provinciales",
         description: [
-          "Remboursement jusqu'à 100% pour les familles",
-          "Pour les premiers acheteurs",
-          "Économies de plusieurs milliers de dollars"
+          "Transferts entre conjoints (séparation/divorce)",
+          "Transferts parents-enfants (conditions applicables)",
+          "Legs par testament"
         ]
       },
       {
-        title: "Exemptions légales",
+        title: "Nouvelles mesures fédérales 2024",
         description: [
-          "Transferts entre conjoints",
-          "Transferts parents-enfants (conditions applicables)",
-          "Legs par testament"
+          "Amortissement 30 ans pour premiers acheteurs",
+          "Amortissement 30 ans pour maisons neuves",
+          "Crédit d'impôt pour première habitation"
         ]
       }
     ]
@@ -217,16 +211,16 @@ const CITY_CONTENT = {
 
   // What is Welcome Tax section
   whatIsWelcomeTax: {
-    title: "Qu'est-ce que la taxe de bienvenue à Montréal ?",
+    title: "Qu'est-ce que la taxe de bienvenue à Chambly ?",
     content: [
-      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Montréal. Cette contribution financière tire son appellation du nom de Jean Bienvenue, ancien ministre des Affaires municipales du Québec qui a instauré cette mesure en 1976.",
-      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie considérablement selon la valeur de la transaction et représente souvent une somme substantielle que les acheteurs doivent prévoir dans leur budget d'acquisition."
+      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Chambly. Cette contribution financière tire son appellation d'une croyance populaire erronée voulant qu'elle provienne du ministre Jean Bienvenue. L'historien Frédéric Lemieux a démontré que cette présomption était fausse, mais le nom est resté ancré dans le langage courant québécois.",
+      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie selon la valeur de la transaction et représente une somme que les acheteurs doivent impérativement prévoir dans leur budget d'acquisition. À Chambly, comme dans la majorité des municipalités québécoises, les taux appliqués suivent les tranches provinciales standards sans majoration."
     ]
   },
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Chambly en 2025 ?',
     sections: [
       {
         title: 'Base d\'imposition',
@@ -236,44 +230,54 @@ const CITY_CONTENT = {
           "La contrepartie stipulée pour le transfert",
           "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif"
         ]
+      },
+      {
+        title: 'Taux provinciaux applicables',
+        content: "Chambly applique les taux provinciaux standards par tranches :",
+        items: [
+          "0 $ à 61 500 $ : taux de 0,5%",
+          "61 500 $ à 307 800 $ : taux de 1,0%",
+          "Plus de 307 800 $ : taux de 1,5%"
+        ]
       }
     ],
     example: {
       title: 'Exemple de calcul détaillé',
-      propertyValue: '700 000 $',
+      propertyValue: '547 089 $ (prix moyen 2024)',
       calculation: [
-        { range: '0 $ à 58 900 $ × 0,5%', amount: '294,50 $' },
-        { range: '58 900 $ à 294 600 $ × 1,0%', amount: '2 357,00 $' },
-        { range: '294 600 $ à 500 000 $ × 1,5%', amount: '3 081,00 $' },
-        { range: '500 000 $ à 700 000 $ × 2,0%', amount: '4 000,00 $' }
+        { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
+        { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
+        { range: '307 800 $ à 547 089 $ × 1,5%', amount: '3 589,34 $' }
       ],
-      total: '9 732,50 $'
+      total: '6 359,84 $'
     },
     paymentInfo: {
       title: 'Modalités de paiement',
-      content: "La Ville de Montréal expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement. Les contribuables peuvent régler par virement bancaire, chèque ou aux comptoirs de services de la Ville."
+      content: "La Ville de Chambly expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement dans les 30 jours. Le non-paiement entraîne des pénalités et intérêts."
     }
   },
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier de Chambly : tendances 2025',
     sections: [
       {
-        title: 'Évolution des prix',
-        content: "Le marché immobilier montréalais a connu une croissance soutenue. Entre 1999 et 2024, la valeur moyenne des résidences unifamiliales a presque sextuplé, passant de 155 446 $ à 925 599 $, la plus forte augmentation de toutes les régions du Québec.",
+        title: 'Un marché attractif et stable',
+        content: "Le marché immobilier de Chambly se distingue par sa stabilité et son excellent ratio prix sur salaire, parmi les meilleurs au Québec. En 2024, le prix moyen d'une maison unifamiliale s'établit à 547 089 $, avec des transactions variant de 249 900 $ à 1 399 000 $ selon le type et l'emplacement.",
         stats: [
-          { year: '1999', value: '155 446 $' },
-          { year: '2024', value: '925 599 $' }
+          { label: 'Prix moyen unifamiliale 2024', value: '547 089 $' },
+          { label: 'Part des unifamiliales', value: '66%' },
+          { label: 'Part des condos', value: '34%' },
+          { label: 'Distance de Montréal', value: '30 km' }
         ]
       },
       {
-        title: 'Facteurs influençant le marché',
+        title: 'Facteurs d\'attractivité',
         items: [
-          { icon: Users, text: "Immigration internationale : Alimente continuellement la demande en logements" },
-          { icon: TrendingUp, text: "Taux d'intérêt : Influencent directement la capacité d'emprunt" },
-          { icon: Building2, text: "Infrastructures : REM et prolongements de métro stimulent le développement" },
-          { icon: Home, text: "Pénurie de logements : Exerce une pression à la hausse sur les prix" }
+          { icon: Users, text: "Croissance familiale : 43,5% des ménages ont 3+ personnes (vs 32% au Québec)" },
+          { icon: TrendingUp, text: "Âge moyen : 37,2 ans, nettement plus jeune que la moyenne provinciale de 41,9 ans" },
+          { icon: Building2, text: "Proximité Montréal : Moins de 30 minutes en voiture, sortie 22 autoroute 10" },
+          { icon: Home, text: "Reconnue en 2018 parmi les meilleures villes au Canada pour élever une famille" }
         ]
       }
     ]
@@ -281,27 +285,27 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "L'avenir de Montréal : perspectives d'investissement",
+    title: "L'avenir de Chambly : perspectives d'investissement",
     items: [
       {
         icon: Building2,
-        title: 'Développements infrastructurels',
-        description: 'Le Réseau express métropolitain améliore la desserte des quartiers périphériques. Les projets de revitalisation dans l\'est de Montréal et le long du fleuve créent de nouvelles opportunités d\'investissement.'
+        title: 'Patrimoine historique unique',
+        description: 'Fort Chambly (1709-1711) classé lieu historique national, 279 bâtiments patrimoniaux recensés. Canal historique et bassin offrant un cachet touristique impérissable.'
       },
       {
         icon: Users,
-        title: 'Tendances démographiques',
-        description: 'La croissance soutenue alimentée par l\'immigration garantit une demande continue. Montréal attire des travailleurs qualifiés en technologie, IA et aérospatiale.'
+        title: 'Population jeune et en croissance',
+        description: 'Âge moyen de 37,2 ans, forte proportion de familles (43,5% des ménages de 3+ personnes). Croissance soutenue de 8% entre 2016 et 2021.'
       },
       {
         icon: Home,
-        title: 'Marché locatif dynamique',
-        description: 'Taux d\'inoccupation faible et demande soutenue près des campus, du centre-ville et dans les quartiers bien desservis par le transport en commun.'
+        title: 'Ratio prix/salaire avantageux',
+        description: 'Parmi les meilleurs au Québec, rendant l\'accession à la propriété plus accessible qu\'ailleurs dans la région métropolitaine de Montréal.'
       },
       {
         icon: TrendingUp,
-        title: 'Propriétés multifamiliales',
-        description: 'Les duplex et triplex permettent de générer des revenus locatifs tout en habitant la propriété. Stratégie populaire pour réduire le coût d\'habitation.'
+        title: 'Qualité de vie exceptionnelle',
+        description: 'Festival Bières et Saveurs (65 000 visiteurs), centre culturel moderne, complexe aquatique, école secondaire agrandie (177,3M$). Transport gratuit local.'
       }
     ]
   },
@@ -314,7 +318,7 @@ const CITY_CONTENT = {
       title: 'Courtier hypothécaire indépendant',
       items: [
         'Travaille pour vous, le client',
-        'Accès à 20+ prêteurs (banques, caisses, prêteurs privés)',
+        'Accès à 20+ prêteurs (banques, Desjardins, prêteurs privés)',
         'Compare des dizaines d\'offres pour trouver la meilleure',
         'Négocie en votre nom pour obtenir les meilleures conditions',
         'Services gratuits (rémunéré par la banque)',
@@ -335,8 +339,8 @@ const CITY_CONTENT = {
       ]
     },
     financialImpact: {
-      title: 'Impact financier',
-      content: 'Dans un marché où les prix ont considérablement augmenté, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence.'
+      title: 'Impact financier considérable',
+      content: 'Avec un prix moyen de 547 089 $ à Chambly, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire de 25 ou 30 ans. Un courtier indépendant maximise vos chances d\'obtenir le meilleur taux disponible.'
     }
   },
 
@@ -347,23 +351,38 @@ const CITY_CONTENT = {
       {
         icon: Calculator,
         title: 'Prévoir la taxe dans votre budget',
-        content: "Il est impératif d'incluer la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
-        note: "De nombreux primo-accédants sont surpris par l'ampleur de cette dépense. Utilisez notre calculateur pour éviter les mauvaises surprises."
+        content: "Il est impératif d'inclure la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire et aux frais d'inspection.",
+        note: "Pour une propriété au prix moyen de 547 089 $, la taxe s'élève à environ 6 360 $. Pour une propriété de 350 000 $, prévoyez environ 3 404 $."
       },
       {
         icon: TrendingUp,
-        title: 'Optimiser votre stratégie d\'achat',
-        content: "Selon votre situation familiale et financière, vous pourriez être admissible à différents programmes d'aide qui réduiront substantiellement le coût de la taxe de bienvenue.",
+        title: 'Profiter des avantages de Chambly',
+        content: "Chambly offre un ratio prix/salaire parmi les meilleurs au Québec, rendant l'accession à la propriété plus accessible qu'à Montréal.",
         items: [
-          "Renseignez-vous sur les programmes municipaux",
-          "Travaillez avec un courtier hypothécaire indépendant",
-          "Consultez un notaire compétent"
+          "Transport local gratuit (lignes Chambly-Richelieu-Carignan)",
+          "Moins de 30 minutes de Montréal (sortie 22 autoroute 10)",
+          "Taux standards (plus avantageux que Montréal pour propriétés haut de gamme)"
         ]
       },
       {
         icon: DollarSign,
-        title: 'Comprendre la structure progressive',
-        content: "La structure progressive signifie que plus votre propriété est dispendieuse, plus le taux marginal augmente. Une propriété à 495 000 $ sera taxée différemment qu'une à 505 000 $ en raison du passage au taux de 2% pour la portion excédant 500 000 $."
+        title: 'Explorer les différents secteurs',
+        content: "Chambly offre une diversité de milieux de vie à différents prix. Le Vieux-Chambly offre du cachet historique, tandis que Chambly-Ouest et Parkwood proposent des prix plus accessibles.",
+        items: [
+          "Secteur historique : Charme patrimonial unique",
+          "Quartier du Bassin : Maisons modernes, jeunes familles",
+          "Chambly-Ouest/Parkwood : Prix abordables, bon rapport qualité-prix"
+        ]
+      },
+      {
+        icon: Home,
+        title: 'Investir dans la qualité de vie',
+        content: "Chambly a été reconnue parmi les meilleures villes au Canada pour élever une famille (2018). Cette réputation durable garantit l'attractivité continue de la ville.",
+        items: [
+          "Obtenir une préautorisation hypothécaire avant de chercher",
+          "Visiter plusieurs secteurs pour connaître leurs ambiances",
+          "Considérer les duplex/triplex pour revenus locatifs"
+        ]
       }
     ]
   },
@@ -371,31 +390,35 @@ const CITY_CONTENT = {
   // FAQ section
   faq: {
     title: 'Questions fréquentes',
-    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue",
+    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue à Chambly",
     items: [
       {
         q: "Qu'est-ce que la taxe de bienvenue ?",
-        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Montréal. Elle a été instaurée en 1976."
+        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Chambly. Contrairement à la croyance populaire, elle ne provient pas du ministre Jean Bienvenue."
       },
       {
-        q: 'Quand dois-je payer la taxe de bienvenue ?',
-        a: "La Ville de Montréal envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Le paiement doit se faire en un seul versement."
+        q: 'Quand dois-je payer la taxe de bienvenue à Chambly ?',
+        a: "La Ville de Chambly envoie la facture environ 30 jours après l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement dans les 30 jours suivant la réception du compte. Le non-paiement entraîne des pénalités."
       },
       {
-        q: "Comment est calculée la base d'imposition ?",
-        a: "La base d'imposition correspond au montant le plus élevé entre le prix de vente (sans TPS/TVQ), la contrepartie stipulée, ou la valeur marchande selon le rôle d'évaluation."
+        q: 'Combien coûte la taxe pour une propriété moyenne à Chambly ?',
+        a: "Pour une maison unifamiliale au prix moyen de 547 089 $ (2024), la taxe de bienvenue s'élève à environ 6 360 $. Pour une propriété de 350 000 $, elle est d'environ 3 404 $. Utilisez notre calculateur pour votre situation spécifique."
       },
       {
-        q: 'Puis-je être exempté de la taxe de bienvenue ?',
-        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints, entre parents-enfants (conditions applicables), legs par testament, et programmes d'aide pour premiers acheteurs avec famille."
+        q: 'Les taux de Chambly sont-ils avantageux ?',
+        a: "Oui ! Chambly applique les taux provinciaux standards (maximum 1,5%) sans majoration. C'est plus avantageux que Montréal qui applique des taux allant jusqu'à 3% pour les propriétés haut de gamme."
+      },
+      {
+        q: 'Pourquoi acheter à Chambly plutôt qu\'à Montréal ?',
+        a: "Chambly offre un ratio prix/salaire parmi les meilleurs au Québec, à seulement 30 km de Montréal. La ville a été reconnue parmi les meilleures au Canada pour élever une famille, avec un riche patrimoine historique et d'excellents services."
       }
     ]
   },
 
   // Final CTA section
   finalCta: {
-    title: 'Prêt à économiser sur votre achat immobilier ?',
-    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement',
+    title: 'Prêt à réaliser votre rêve de propriété à Chambly ?',
+    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement dans cette ville exceptionnelle',
     buttons: [
       { text: 'Appelez-nous maintenant', icon: Phone },
       { text: 'Demander une soumission', icon: Mail }
@@ -404,7 +427,7 @@ const CITY_CONTENT = {
 
   // Footer
   footer: {
-    about: "Experts en financement hypothécaire à Montréal, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
+    about: "Experts en financement hypothécaire à Chambly et la Montérégie, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
     links: [
       { text: 'Calculateur de prêt', href: '#' },
       { text: 'Taux hypothécaires', href: '#' },
@@ -412,11 +435,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
+      phone: '(450) 123-4567',
       email: 'info@votresite.com',
-      address: 'Montréal, Québec'
+      address: 'Chambly, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2025 Calculateur Taxe de Bienvenue Chambly. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };

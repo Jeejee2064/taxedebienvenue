@@ -23,16 +23,16 @@ import {
 const CITY_CONTENT = {
   // Basic city information
   city: {
-    name: 'Montréal',
-    displayName: 'Montréal',
+    name: 'Québec',
+    displayName: 'Québec',
     year: '2025',
-    heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
+    heroImage: 'https://imgs.search.brave.com/fxK8_YPZHqQJN3dqKLPfxuD9vXEJKV9xGgQKLMQH_Yc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTMx/ODYzODM3L3Bob3Rv/L2NoYXRlYXUtZnJv/bnRlbmFjLWFuZC1v/bGQtcXVlYmVjLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1G/WW0zVzBRWDU3LTk1/TzY4OVFIc2JxR0Rw/ZHRhbGp0SmdsUW1K/TDNnQWRnPQ',
   },
 
   // Available cities for the top bar
   availableCities: [
-    { name: 'Montréal', path: '/' },
-    { name: 'Québec', path: '/quebec' },
+    { name: 'Montréal', path: '/montreal' },
+    { name: 'Québec', path: '/' },
     { name: 'Laval', path: '/laval' },
     { name: 'Chambly', path: '/chambly' },
     { name: 'Candiac', path: '/candiac' },
@@ -42,10 +42,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Québec en 2025',
     features: [
       'Calcul instantané',
-      'Taux 2026',
+      'Taux 2025',
       '100% gratuit'
     ]
   },
@@ -61,19 +61,16 @@ const CITY_CONTENT = {
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Québec • 2025',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2025 rates for Quebec City - provincial standard rates)
   taxBrackets: [
-    { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
-    { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
-    { max: 500000, rate: 1.5, name: '294 600 $ à 500 000 $' },
-    { max: 1000000, rate: 2.0, name: '500 000 $ à 1 000 000 $' },
-    { max: 2000000, rate: 2.5, name: '1 000 000 $ à 2 000 000 $' },
-    { max: Infinity, rate: 3.0, name: 'Plus de 2 000 000 $' },
+    { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
+    { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
+    { max: Infinity, rate: 1.5, name: 'Plus de 307 800 $' },
   ],
 
   // CTA Form section
@@ -92,63 +89,60 @@ const CITY_CONTENT = {
   // Tax brackets display
   bracketsDisplay: {
     title: 'Grille des taux 2025',
-    subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
+    subtitle: 'Structure progressive des droits de mutation immobilière à Québec',
     brackets: [
-      { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
-      { range: '58 900 $ à 294 600 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
-      { range: '294 600 $ à 500 000 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
-      { range: '500 000 $ à 1 000 000 $', rate: '2,0%', color: 'from-orange-500 to-amber-600' },
-      { range: '1 000 000 $ à 2 000 000 $', rate: '2,5%', color: 'from-red-500 to-rose-600' },
-      { range: 'Plus de 2 000 000 $', rate: '3,0%', color: 'from-slate-700 to-slate-900' },
+      { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
+      { range: '61 500 $ à 307 800 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
+      { range: 'Plus de 307 800 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
     ]
   },
 
   // City statistics
   statistics: {
-    title: 'Montréal en chiffres',
-    subtitle: 'La métropole la plus dynamique du Québec',
+    title: 'Québec en chiffres',
+    subtitle: 'La capitale nationale en pleine expansion',
     stats: [
-      { icon: Users, value: '4,3M', label: 'habitants en région métropolitaine' },
-      { icon: TrendingUp, value: '+4,2%', label: 'croissance démographique annuelle' },
-      { icon: Building2, value: '19', label: 'arrondissements distincts' },
-      { icon: Home, value: '925K$', label: 'prix moyen maison unifamiliale' },
+      { icon: Users, value: '922K', label: 'habitants en région métropolitaine' },
+      { icon: TrendingUp, value: '+2,5%', label: 'croissance démographique annuelle (2024)' },
+      { icon: Building2, value: '6', label: 'arrondissements distincts' },
+      { icon: Home, value: '496K$', label: 'prix moyen maison unifamiliale' },
     ]
   },
 
   // Neighborhoods
   neighborhoods: {
-    title: 'Les quartiers de Montréal',
-    subtitle: 'Découvrez les arrondissements les plus prisés pour votre investissement immobilier',
+    title: 'Les arrondissements de Québec',
+    subtitle: 'Découvrez les secteurs les plus prisés pour votre investissement immobilier',
     items: [
       {
-        name: 'Le Plateau-Mont-Royal',
-        description: 'Quartier artistique et bohème avec ses escaliers extérieurs emblématiques et sa vie culturelle dynamique.',
-        icon: '🎨',
+        name: 'La Cité-Limoilou',
+        description: 'Le cœur historique avec le Vieux-Québec (UNESCO), Saint-Roch branché et Limoilou bohème. Architecture unique et vie culturelle dynamique.',
+        icon: '🏛️',
       },
       {
-        name: 'Ville-Marie',
-        description: 'Centre névralgique avec le Vieux-Montréal, le centre-ville et le Quartier des spectacles.',
-        icon: '🏙️',
+        name: 'Sainte-Foy–Sillery–Cap-Rouge',
+        description: 'Prestige de Sillery, dynamisme universitaire de Sainte-Foy et tranquillité de Cap-Rouge. Secteur prisé avec excellents services.',
+        icon: '🎓',
       },
       {
-        name: 'Rosemont–La Petite-Patrie',
-        description: 'Ambiance familiale avec le marché Jean-Talon et des prix plus accessibles.',
-        icon: '👨‍👩‍👧‍👦',
-      },
-      {
-        name: 'Outremont',
-        description: 'Élégance et raffinement avec ses maisons bourgeoises et ses rues arborées.',
+        name: 'Charlesbourg',
+        description: 'Quartier familial avec le site patrimonial du Trait-Carré. Qualité de vie exceptionnelle et prix abordables pour les copropriétés.',
         icon: '🌳',
       },
       {
-        name: 'Le Sud-Ouest',
-        description: 'Secteur en transformation avec le canal de Lachine et des prix attractifs.',
-        icon: '🚢',
+        name: 'Beauport',
+        description: 'Berceau de l\'Amérique française avec la chute Montmorency. Secteur historique alliant nature et accessibilité.',
+        icon: '💧',
       },
       {
-        name: 'Ahuntsic-Cartierville',
-        description: 'Tranquillité et espaces verts en bordure de la rivière des Prairies.',
-        icon: '🌊',
+        name: 'Les Rivières',
+        description: 'Développement moderne avec Lebourgneuf en pleine expansion. Pôle commercial important et propriétés récentes.',
+        icon: '🏢',
+      },
+      {
+        name: 'La Haute-Saint-Charles',
+        description: 'Le plus abordable pour les maisons unifamiliales. Nature omniprésente avec lacs, forêts et espaces verts.',
+        icon: '🏔️',
       },
     ]
   },
@@ -193,23 +187,23 @@ const CITY_CONTENT = {
 
   // Programs section
   programs: {
-    title: "Programmes d'aide disponibles",
-    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux programmes municipaux",
+    title: "Programmes d'aide et exemptions",
+    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux exemptions légales",
     items: [
       {
-        title: "Programme d'accession à la propriété",
+        title: "Exemptions légales provinciales",
         description: [
-          "Remboursement jusqu'à 100% pour les familles",
-          "Pour les premiers acheteurs",
-          "Économies de plusieurs milliers de dollars"
+          "Transferts entre conjoints (séparation/divorce)",
+          "Transferts parents-enfants (conditions applicables)",
+          "Legs par testament"
         ]
       },
       {
-        title: "Exemptions légales",
+        title: "Nouvelles mesures fédérales 2024",
         description: [
-          "Transferts entre conjoints",
-          "Transferts parents-enfants (conditions applicables)",
-          "Legs par testament"
+          "Amortissement 30 ans pour premiers acheteurs",
+          "Amortissement 30 ans pour maisons neuves",
+          "Amélioration du pouvoir d'achat"
         ]
       }
     ]
@@ -217,16 +211,16 @@ const CITY_CONTENT = {
 
   // What is Welcome Tax section
   whatIsWelcomeTax: {
-    title: "Qu'est-ce que la taxe de bienvenue à Montréal ?",
+    title: "Qu'est-ce que la taxe de bienvenue à Québec ?",
     content: [
-      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Montréal. Cette contribution financière tire son appellation du nom de Jean Bienvenue, ancien ministre des Affaires municipales du Québec qui a instauré cette mesure en 1976.",
-      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie considérablement selon la valeur de la transaction et représente souvent une somme substantielle que les acheteurs doivent prévoir dans leur budget d'acquisition."
+      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété dans la ville de Québec. Cette contribution financière tire son appellation d'une croyance populaire erronée attribuant son origine à Jean Bienvenue. En réalité, l'historien Frédéric Lemieux a démontré que ce ministre n'était pas à l'origine de cette taxe instaurée en 1976 sous le gouvernement de René Lévesque.",
+      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie selon la valeur de la transaction et représente une somme que les acheteurs doivent impérativement prévoir dans leur budget d'acquisition. À Québec, les taux appliqués suivent les tranches provinciales standards, sans majoration comme c'est le cas dans certaines grandes villes."
     ]
   },
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Québec en 2025 ?',
     sections: [
       {
         title: 'Base d\'imposition',
@@ -234,46 +228,56 @@ const CITY_CONTENT = {
         items: [
           "Le prix de vente inscrit dans l'acte notarié (excluant TPS et TVQ)",
           "La contrepartie stipulée pour le transfert",
-          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif"
+          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif (1,00 en 2025)"
+        ]
+      },
+      {
+        title: 'Taux provinciaux applicables',
+        content: "Québec applique les taux provinciaux standards par tranches :",
+        items: [
+          "0 $ à 61 500 $ : taux de 0,5%",
+          "61 500 $ à 307 800 $ : taux de 1,0%",
+          "Plus de 307 800 $ : taux de 1,5%"
         ]
       }
     ],
     example: {
       title: 'Exemple de calcul détaillé',
-      propertyValue: '700 000 $',
+      propertyValue: '500 000 $',
       calculation: [
-        { range: '0 $ à 58 900 $ × 0,5%', amount: '294,50 $' },
-        { range: '58 900 $ à 294 600 $ × 1,0%', amount: '2 357,00 $' },
-        { range: '294 600 $ à 500 000 $ × 1,5%', amount: '3 081,00 $' },
-        { range: '500 000 $ à 700 000 $ × 2,0%', amount: '4 000,00 $' }
+        { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
+        { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
+        { range: '307 800 $ à 500 000 $ × 1,5%', amount: '2 883,00 $' }
       ],
-      total: '9 732,50 $'
+      total: '5 653,50 $'
     },
     paymentInfo: {
-      title: 'Modalités de paiement',
-      content: "La Ville de Montréal expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement. Les contribuables peuvent régler par virement bancaire, chèque ou aux comptoirs de services de la Ville."
+      title: 'Modalités de paiement flexibles',
+      content: "La Ville de Québec offre des modalités de paiement avantageuses. La facture est expédiée quelques semaines suivant l'inscription de l'acte de vente. Les contribuables bénéficient d'une option de paiement en trois versements égaux sans intérêts, avec des échéances à 30, 90 et 150 jours. Si le montant est inférieur à 300 $, le paiement doit s'effectuer en un seul versement dans les 30 jours."
     }
   },
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier de Québec : tendances 2025',
     sections: [
       {
-        title: 'Évolution des prix',
-        content: "Le marché immobilier montréalais a connu une croissance soutenue. Entre 1999 et 2024, la valeur moyenne des résidences unifamiliales a presque sextuplé, passant de 155 446 $ à 925 599 $, la plus forte augmentation de toutes les régions du Québec.",
+        title: 'Reprise vigoureuse du marché',
+        content: "Le marché immobilier de Québec a connu une reprise remarquable en 2024 et début 2025. Au premier trimestre de 2025, le prix moyen d'une maison unifamiliale s'établit à 495 836 $, en hausse de 13% par rapport à l'année précédente. Cette augmentation s'explique par les baisses successives du taux directeur de la Banque du Canada et l'amélioration de la confiance des consommateurs.",
         stats: [
-          { year: '1999', value: '155 446 $' },
-          { year: '2024', value: '925 599 $' }
+          { label: 'Prix moyen unifamiliale Q1 2025', value: '495 836 $' },
+          { label: 'Hausse annuelle', value: '+13%' },
+          { label: 'Délai de vente moyen', value: '49 jours' },
+          { label: 'Prix moyen copropriété', value: '345 752 $' }
         ]
       },
       {
         title: 'Facteurs influençant le marché',
         items: [
-          { icon: Users, text: "Immigration internationale : Alimente continuellement la demande en logements" },
-          { icon: TrendingUp, text: "Taux d'intérêt : Influencent directement la capacité d'emprunt" },
-          { icon: Building2, text: "Infrastructures : REM et prolongements de métro stimulent le développement" },
-          { icon: Home, text: "Pénurie de logements : Exerce une pression à la hausse sur les prix" }
+          { icon: Users, text: "Immigration internationale : 22 200 nouveaux résidents en 2024, représentant 89% de la croissance" },
+          { icon: TrendingUp, text: "Taux d'intérêt en baisse : Stimulent la demande et améliorent le pouvoir d'achat" },
+          { icon: Building2, text: "Pénurie d'inventaire : Baisse de 24% pour les unifamiliales et 39% pour les copros" },
+          { icon: Home, text: "Prévisions 2025 : Royal LePage anticipe une hausse de 11% des prix" }
         ]
       }
     ]
@@ -281,27 +285,27 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "L'avenir de Montréal : perspectives d'investissement",
+    title: "L'avenir de Québec : perspectives d'investissement",
     items: [
       {
         icon: Building2,
-        title: 'Développements infrastructurels',
-        description: 'Le Réseau express métropolitain améliore la desserte des quartiers périphériques. Les projets de revitalisation dans l\'est de Montréal et le long du fleuve créent de nouvelles opportunités d\'investissement.'
+        title: 'Développements en périphérie',
+        description: 'Nouveaux secteurs résidentiels en expansion à Boischatel, L\'Ange-Gardien, Stoneham et Sainte-Brigitte-de-Laval. Propriétés neuves avec accès rapide au centre-ville.'
       },
       {
         icon: Users,
-        title: 'Tendances démographiques',
-        description: 'La croissance soutenue alimentée par l\'immigration garantit une demande continue. Montréal attire des travailleurs qualifiés en technologie, IA et aérospatiale.'
+        title: 'Croissance démographique exceptionnelle',
+        description: 'Record de 2,5% de croissance en 2024. Projections anticipent le franchissement du million d\'habitants d\'ici 2036, garantissant une demande continue en logements.'
       },
       {
         icon: Home,
-        title: 'Marché locatif dynamique',
-        description: 'Taux d\'inoccupation faible et demande soutenue près des campus, du centre-ville et dans les quartiers bien desservis par le transport en commun.'
+        title: 'Stabilité économique',
+        description: 'La forte présence de la fonction publique provinciale confère à Québec une résilience économique enviable. Secteurs de la technologie, assurance et services en croissance.'
       },
       {
         icon: TrendingUp,
-        title: 'Propriétés multifamiliales',
-        description: 'Les duplex et triplex permettent de générer des revenus locatifs tout en habitant la propriété. Stratégie populaire pour réduire le coût d\'habitation.'
+        title: 'Marché favorable aux investisseurs',
+        description: 'Prix inférieurs à Montréal pour des propriétés comparables. Marché locatif dynamique près de l\'Université Laval et dans les arrondissements centraux.'
       }
     ]
   },
@@ -335,8 +339,8 @@ const CITY_CONTENT = {
       ]
     },
     financialImpact: {
-      title: 'Impact financier',
-      content: 'Dans un marché où les prix ont considérablement augmenté, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence.'
+      title: 'Impact financier considérable',
+      content: 'Dans un marché où les prix ont augmenté de 13% en un an, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence entre un bon taux et le meilleur taux disponible pour votre situation.'
     }
   },
 
@@ -347,23 +351,33 @@ const CITY_CONTENT = {
       {
         icon: Calculator,
         title: 'Prévoir la taxe dans votre budget',
-        content: "Il est impératif d'incluer la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
-        note: "De nombreux primo-accédants sont surpris par l'ampleur de cette dépense. Utilisez notre calculateur pour éviter les mauvaises surprises."
+        content: "Il est impératif d'inclure la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
+        note: "Pour une propriété de 400 000 $, la taxe de bienvenue s'élève à environ 4 403,50 $. Utilisez notre calculateur pour éviter les mauvaises surprises."
       },
       {
         icon: TrendingUp,
-        title: 'Optimiser votre stratégie d\'achat',
-        content: "Selon votre situation familiale et financière, vous pourriez être admissible à différents programmes d'aide qui réduiront substantiellement le coût de la taxe de bienvenue.",
+        title: 'Profiter des modalités de paiement flexibles',
+        content: "La Ville de Québec offre un avantage unique : le paiement en trois versements égaux sans intérêts (30, 90 et 150 jours). Cette flexibilité facilite grandement la gestion de votre budget.",
         items: [
-          "Renseignez-vous sur les programmes municipaux",
-          "Travaillez avec un courtier hypothécaire indépendant",
-          "Consultez un notaire compétent"
+          "Planifiez vos trois versements à l'avance",
+          "Aucun intérêt sur les paiements échelonnés",
+          "Option de paiement unique également disponible"
         ]
       },
       {
         icon: DollarSign,
-        title: 'Comprendre la structure progressive',
-        content: "La structure progressive signifie que plus votre propriété est dispendieuse, plus le taux marginal augmente. Une propriété à 495 000 $ sera taxée différemment qu'une à 505 000 $ en raison du passage au taux de 2% pour la portion excédant 500 000 $."
+        title: 'Avantage des taux de Québec',
+        content: "Contrairement à Montréal qui applique des taux bonifiés jusqu'à 3% pour les propriétés haut de gamme, Québec maintient un taux maximum de 1,5%. Pour une propriété de 800 000 $, vous économisez plus de 4 600 $ par rapport à Montréal."
+      },
+      {
+        icon: Home,
+        title: 'Agir rapidement sur le marché',
+        content: "Avec un délai de vente moyen de seulement 49 jours et des situations de surenchère fréquentes, une préautorisation hypothécaire est essentielle. Les ventes ont bondi de 36% en janvier 2025 versus 2024.",
+        items: [
+          "Obtenir une préautorisation avant de chercher",
+          "Travailler avec un courtier hypothécaire indépendant",
+          "Être prêt à agir rapidement sur les bonnes opportunités"
+        ]
       }
     ]
   },
@@ -371,31 +385,35 @@ const CITY_CONTENT = {
   // FAQ section
   faq: {
     title: 'Questions fréquentes',
-    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue",
+    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue à Québec",
     items: [
       {
         q: "Qu'est-ce que la taxe de bienvenue ?",
-        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Montréal. Elle a été instaurée en 1976."
+        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Québec. Elle a été instaurée en 1976 sous le gouvernement de René Lévesque."
       },
       {
-        q: 'Quand dois-je payer la taxe de bienvenue ?',
-        a: "La Ville de Montréal envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Le paiement doit se faire en un seul versement."
+        q: 'Puis-je payer en plusieurs versements ?',
+        a: "Oui ! La Ville de Québec offre une option unique : le paiement en trois versements égaux sans intérêts, avec des échéances à 30, 90 et 150 jours. Si le montant est inférieur à 300 $, le paiement doit se faire en un seul versement."
       },
       {
-        q: "Comment est calculée la base d'imposition ?",
-        a: "La base d'imposition correspond au montant le plus élevé entre le prix de vente (sans TPS/TVQ), la contrepartie stipulée, ou la valeur marchande selon le rôle d'évaluation."
+        q: 'Quels sont les taux applicables en 2025 ?',
+        a: "Québec applique les taux provinciaux standards : 0,5% sur la première tranche (0-61 500 $), 1,0% sur la deuxième tranche (61 500-307 800 $), et 1,5% au-delà de 307 800 $. Ces taux sont plus avantageux que ceux de Montréal pour les propriétés haut de gamme."
       },
       {
         q: 'Puis-je être exempté de la taxe de bienvenue ?',
-        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints, entre parents-enfants (conditions applicables), legs par testament, et programmes d'aide pour premiers acheteurs avec famille."
+        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints lors d'une séparation/divorce, entre parents-enfants (conditions applicables), legs par testament. Consultez votre notaire pour connaître votre admissibilité."
+      },
+      {
+        q: 'Le marché de Québec est-il favorable aux acheteurs ?',
+        a: "Le marché favorise actuellement les vendeurs avec des prix en hausse de 13% et des délais de vente courts (49 jours). Les ventes ont bondi de 36% en janvier 2025. Une préautorisation hypothécaire et un courtier indépendant sont essentiels pour réussir votre achat."
       }
     ]
   },
 
   // Final CTA section
   finalCta: {
-    title: 'Prêt à économiser sur votre achat immobilier ?',
-    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement',
+    title: 'Prêt à économiser sur votre achat immobilier à Québec ?',
+    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement avec accès à 20+ prêteurs',
     buttons: [
       { text: 'Appelez-nous maintenant', icon: Phone },
       { text: 'Demander une soumission', icon: Mail }
@@ -404,7 +422,7 @@ const CITY_CONTENT = {
 
   // Footer
   footer: {
-    about: "Experts en financement hypothécaire à Montréal, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
+    about: "Experts en financement hypothécaire à Québec, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
     links: [
       { text: 'Calculateur de prêt', href: '#' },
       { text: 'Taux hypothécaires', href: '#' },
@@ -412,11 +430,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
+      phone: '(418) 123-4567',
       email: 'info@votresite.com',
-      address: 'Montréal, Québec'
+      address: 'Québec, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2025 Calculateur Taxe de Bienvenue Québec. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };

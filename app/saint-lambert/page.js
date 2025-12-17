@@ -23,29 +23,29 @@ import {
 const CITY_CONTENT = {
   // Basic city information
   city: {
-    name: 'Montréal',
-    displayName: 'Montréal',
+    name: 'Saint-Lambert',
+    displayName: 'Saint-Lambert',
     year: '2025',
-    heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
+    heroImage: 'https://imgs.search.brave.com/xH5KqLMH0vQJ5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2FpbnQtbGFtYmVy/dC5jYS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wNi9wYXJj/LXNhaW50LWxhbWJl/cnQuanBn',
   },
 
   // Available cities for the top bar
   availableCities: [
-    { name: 'Montréal', path: '/' },
+    { name: 'Montréal', path: '/montreal' },
     { name: 'Québec', path: '/quebec' },
     { name: 'Laval', path: '/laval' },
     { name: 'Chambly', path: '/chambly' },
     { name: 'Candiac', path: '/candiac' },
-    { name: 'Saint-Lambert', path: '/saint-lambert' },
+    { name: 'Saint-Lambert', path: '/' },
   ],
 
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Saint-Lambert en 2025',
     features: [
       'Calcul instantané',
-      'Taux 2026',
+      'Taux 2025',
       '100% gratuit'
     ]
   },
@@ -55,161 +55,157 @@ const CITY_CONTENT = {
     title: 'Calculateur',
     subtitle: 'Taxe de bienvenue 2025',
     inputLabel: "Prix d'achat de la propriété",
-    inputPlaceholder: '500 000',
+    inputPlaceholder: '750 000',
     buttonText: 'Calculer maintenant',
     buttonHint: 'Appuyez sur Entrée ou cliquez sur le bouton pour calculer',
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Saint-Lambert • 2025',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2025 rates - provincial standard)
   taxBrackets: [
-    { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
-    { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
-    { max: 500000, rate: 1.5, name: '294 600 $ à 500 000 $' },
-    { max: 1000000, rate: 2.0, name: '500 000 $ à 1 000 000 $' },
-    { max: 2000000, rate: 2.5, name: '1 000 000 $ à 2 000 000 $' },
-    { max: Infinity, rate: 3.0, name: 'Plus de 2 000 000 $' },
+    { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
+    { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
+    { max: Infinity, rate: 1.5, name: 'Plus de 307 800 $' },
   ],
 
   // CTA Form section
   ctaForm: {
-    title: 'Obtenez un accompagnement personnalisé',
-    subtitle: 'Nos experts en financement hypothécaire vous aident à optimiser votre achat et à économiser sur votre taxe de bienvenue',
-    formTitle: 'Formulaire Zoho',
-    formDescription: 'Insérez votre formulaire Zoho ici pour capturer les leads',
+    title: 'Expertise hypothécaire à Saint-Lambert',
+    subtitle: 'Nos courtiers spécialisés de la Rive-Sud vous aident à financer votre propriété dans cette ville prisée avec les conditions optimales',
+    formTitle: 'Demande d\'évaluation',
+    formDescription: 'Recevez une analyse personnalisée pour votre projet immobilier à Saint-Lambert',
     benefits: [
-      { title: 'Consultation gratuite', description: 'Sans engagement' },
-      { title: 'Meilleurs taux', description: 'Comparaison de 20+ prêteurs' },
-      { title: 'Service personnalisé', description: 'Accompagnement complet' }
+      { title: 'Consultation experte', description: 'Gratuite et sans engagement' },
+      { title: 'Connaissance locale', description: 'Spécialistes de Saint-Lambert' },
+      { title: 'Financement optimal', description: 'Meilleurs taux disponibles' }
     ]
   },
 
   // Tax brackets display
   bracketsDisplay: {
     title: 'Grille des taux 2025',
-    subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
+    subtitle: 'Structure d\'imposition des droits de mutation à Saint-Lambert',
     brackets: [
-      { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
-      { range: '58 900 $ à 294 600 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
-      { range: '294 600 $ à 500 000 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
-      { range: '500 000 $ à 1 000 000 $', rate: '2,0%', color: 'from-orange-500 to-amber-600' },
-      { range: '1 000 000 $ à 2 000 000 $', rate: '2,5%', color: 'from-red-500 to-rose-600' },
-      { range: 'Plus de 2 000 000 $', rate: '3,0%', color: 'from-slate-700 to-slate-900' },
+      { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
+      { range: '61 500 $ à 307 800 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
+      { range: 'Plus de 307 800 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
     ]
   },
 
   // City statistics
   statistics: {
-    title: 'Montréal en chiffres',
-    subtitle: 'La métropole la plus dynamique du Québec',
+    title: 'Saint-Lambert en chiffres',
+    subtitle: 'Une ville patrimoniale prisée de la Rive-Sud',
     stats: [
-      { icon: Users, value: '4,3M', label: 'habitants en région métropolitaine' },
-      { icon: TrendingUp, value: '+4,2%', label: 'croissance démographique annuelle' },
-      { icon: Building2, value: '19', label: 'arrondissements distincts' },
-      { icon: Home, value: '925K$', label: 'prix moyen maison unifamiliale' },
+      { icon: Users, value: '22 000+', label: 'résidents (ville établie 1857)' },
+      { icon: TrendingUp, value: 'Top 3', label: 'villes les plus chères Rive-Sud' },
+      { icon: Building2, value: '3 stations', label: 'de métro à proximité' },
+      { icon: Home, value: '700-900K$', label: 'fourchette typique unifamiliale' },
     ]
   },
 
   // Neighborhoods
   neighborhoods: {
-    title: 'Les quartiers de Montréal',
-    subtitle: 'Découvrez les arrondissements les plus prisés pour votre investissement immobilier',
+    title: 'Les secteurs de Saint-Lambert',
+    subtitle: 'Des quartiers patrimoniaux prisés aux développements modernes',
     items: [
       {
-        name: 'Le Plateau-Mont-Royal',
-        description: 'Quartier artistique et bohème avec ses escaliers extérieurs emblématiques et sa vie culturelle dynamique.',
-        icon: '🎨',
+        name: 'Vieux-Saint-Lambert',
+        description: 'Cœur historique avec architecture victorienne et édouardienne préservée. Maisons centenaires, rues bordées d\'arbres, proximité église patrimoniale et parc du même nom.',
+        icon: '🏛️',
       },
       {
-        name: 'Ville-Marie',
-        description: 'Centre névralgique avec le Vieux-Montréal, le centre-ville et le Quartier des spectacles.',
-        icon: '🏙️',
+        name: 'Secteur Victoria',
+        description: 'Avenue Victoria et ses environs : artère commerciale animée avec boutiques, restaurants et cafés. Mélange résidentiel de maisons ancestrales et condos modernes.',
+        icon: '🛍️',
       },
       {
-        name: 'Rosemont–La Petite-Patrie',
-        description: 'Ambiance familiale avec le marché Jean-Talon et des prix plus accessibles.',
-        icon: '👨‍👩‍👧‍👦',
+        name: 'Préville',
+        description: 'Quartier résidentiel tranquille au sud de la ville. Maisons unifamiliales spacieuses, ambiance familiale, proximité golf et espaces verts. Secteur très recherché.',
+        icon: '⛳',
       },
       {
-        name: 'Outremont',
-        description: 'Élégance et raffinement avec ses maisons bourgeoises et ses rues arborées.',
+        name: 'Riverside (bordure)',
+        description: 'Secteurs limitrophes avec Brossard offrant condos et maisons de ville plus accessibles. Proximité services et transport en commun (REM et métro).',
+        icon: '🚇',
+      },
+      {
+        name: 'Secteur du Parc',
+        description: 'Autour du magnifique parc Saint-Lambert. Propriétés haut de gamme avec vue sur espaces verts. Très prisé des familles pour qualité de vie exceptionnelle.',
         icon: '🌳',
       },
       {
-        name: 'Le Sud-Ouest',
-        description: 'Secteur en transformation avec le canal de Lachine et des prix attractifs.',
-        icon: '🚢',
-      },
-      {
-        name: 'Ahuntsic-Cartierville',
-        description: 'Tranquillité et espaces verts en bordure de la rivière des Prairies.',
-        icon: '🌊',
+        name: 'Secteur Métro',
+        description: 'Proximité immédiate station Longueuil-Université-de-Sherbrooke. Condos et appartements prisés par jeunes professionnels. Accès rapide à Montréal.',
+        icon: '🚊',
       },
     ]
   },
 
-  // Benefits section
+  // Benefits section - RÉÉCRIT POUR SAINT-LAMBERT
   benefits: {
-    title: 'Pourquoi choisir un courtier hypothécaire indépendant ?',
-    subtitle: 'Maximisez vos économies et optimisez votre financement',
+    title: 'Pourquoi consulter un courtier multi-prêteurs à Saint-Lambert ?',
+    subtitle: 'Optimisez votre investissement dans cette ville prisée',
     items: [
       {
-        title: 'Accès à 20+ prêteurs',
-        description: 'Comparaison exhaustive des offres de toutes les institutions financières pour trouver le meilleur taux.',
+        title: 'Comparaison exhaustive du marché',
+        description: 'Pour des propriétés de 700 000$ à 900 000$+ typiques à Saint-Lambert, l\'accès à 20+ institutions financières permet d\'identifier les meilleures conditions disponibles pour votre profil.',
         icon: <Building2 className="w-8 h-8" />,
       },
       {
-        title: 'Économies substantielles',
-        description: "Chaque 0,1% économisé sur votre taux représente des milliers de dollars sur la durée du prêt.",
+        title: 'Économies substantielles garanties',
+        description: "Sur un prêt de 750 000$ (typique à Saint-Lambert), économiser 0,15% de taux représente plus de 16 875$ sur 25 ans. Nous négocions agressivement pour vous.",
         icon: <DollarSign className="w-8 h-8" />,
       },
       {
-        title: 'Service gratuit',
-        description: 'Le courtier est rémunéré par la banque, ses services ne vous coûtent rien.',
+        title: 'Expertise sans frais additionnels',
+        description: 'Les prêteurs compensent votre courtier. Vous obtenez une expertise professionnelle du marché haut de gamme de Saint-Lambert sans débours personnel.',
         icon: <CheckCircle className="w-8 h-8" />,
       },
       {
-        title: 'Expertise fiscale',
-        description: 'Stratégies avancées comme la manœuvre Smith ou le MAPA pour optimiser votre situation.',
+        title: 'Planification fiscale intégrée',
+        description: 'Stratégies de déductibilité (Smith, MAPA) particulièrement pertinentes pour propriétés de valeur élevée. Maximisez vos avantages fiscaux.',
         icon: <TrendingUp className="w-8 h-8" />,
       },
       {
-        title: 'Dossiers complexes',
-        description: 'Solutions pour travailleurs autonomes, nouveaux arrivants et situations de crédit particulières.',
+        title: 'Solutions pour acheteurs exigeants',
+        description: 'Professionnels établis, entrepreneurs, investisseurs : nous structurons des financements adaptés aux situations patrimoniales complexes.',
         icon: <Users className="w-8 h-8" />,
       },
       {
-        title: 'Accompagnement complet',
-        description: 'Support personnalisé du début à la fin, incluant la négociation et le suivi de votre dossier.',
+        title: 'Gestion intégrale du processus',
+        description: 'Coordination complète de votre dossier avec institutions, évaluateurs et notaires. Service clé en main pour votre tranquillité d\'esprit.',
         icon: <ArrowRight className="w-8 h-8" />,
       },
     ]
   },
 
-  // Programs section
+  // Programs section - RÉÉCRIT POUR SAINT-LAMBERT
   programs: {
-    title: "Programmes d'aide disponibles",
-    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux programmes municipaux",
+    title: "Optimisation fiscale et exemptions",
+    subtitle: "Programmes et stratégies pour alléger vos coûts d'acquisition à Saint-Lambert",
     items: [
       {
-        title: "Programme d'accession à la propriété",
+        title: "Exemptions des droits de mutation",
         description: [
-          "Remboursement jusqu'à 100% pour les familles",
-          "Pour les premiers acheteurs",
-          "Économies de plusieurs milliers de dollars"
+          "Transferts entre époux lors de séparation ou divorce",
+          "Transferts intergénérationnels selon critères légaux",
+          "Legs successoraux (droit supplétif minimal applicable)",
+          "Restructurations corporatives admissibles pour investisseurs"
         ]
       },
       {
-        title: "Exemptions légales",
+        title: "Stratégies de financement avancées",
         description: [
-          "Transferts entre conjoints",
-          "Transferts parents-enfants (conditions applicables)",
-          "Legs par testament"
+          "Amortissement 30 ans pour premiers acheteurs (déc. 2024)",
+          "Crédit d'impôt première habitation (paliers provincial et fédéral)",
+          "RAP : retrait REER jusqu'à 60 000$ par personne pour mise de fonds",
+          "Planification hypothécaire pour minimiser coûts d'emprunt à long terme"
         ]
       }
     ]
@@ -217,63 +213,73 @@ const CITY_CONTENT = {
 
   // What is Welcome Tax section
   whatIsWelcomeTax: {
-    title: "Qu'est-ce que la taxe de bienvenue à Montréal ?",
+    title: "Qu'est-ce que la taxe de bienvenue à Saint-Lambert ?",
     content: [
-      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Montréal. Cette contribution financière tire son appellation du nom de Jean Bienvenue, ancien ministre des Affaires municipales du Québec qui a instauré cette mesure en 1976.",
-      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie considérablement selon la valeur de la transaction et représente souvent une somme substantielle que les acheteurs doivent prévoir dans leur budget d'acquisition."
+      "La taxe de bienvenue, formellement désignée comme droit de mutation immobilière, constitue un prélèvement municipal exigé par la Ville de Saint-Lambert lors de tout transfert de propriété immobilière. Ce droit s'applique universellement à toutes les transactions immobilières résidentielles et commerciales sur le territoire, calculé en fonction de la valeur de la propriété transférée.",
+      "À Saint-Lambert, comme dans l'ensemble des municipalités québécoises, le calcul suit les taux provinciaux établis par la Loi concernant les droits sur les mutations immobilières. Pour les propriétés de valeur élevée typiques de Saint-Lambert (700 000$ à 900 000$+), cette taxe représente un montant significatif variant généralement de 9 000$ à 12 000$+, une dépense importante à intégrer dans votre planification budgétaire d'acquisition."
     ]
   },
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Saint-Lambert en 2025 ?',
     sections: [
       {
-        title: 'Base d\'imposition',
-        content: "Le calcul des droits de mutation s'effectue sur la base d'imposition, qui correspond au montant le plus élevé parmi :",
+        title: 'Établissement de la base de calcul',
+        content: "Le montant imposable correspond à la valeur la plus élevée parmi :",
         items: [
-          "Le prix de vente inscrit dans l'acte notarié (excluant TPS et TVQ)",
-          "La contrepartie stipulée pour le transfert",
-          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif"
+          "Prix de vente stipulé dans l'acte notarié (hors TPS/TVQ)",
+          "Contrepartie totale convenue pour le transfert",
+          "Évaluation municipale ajustée par le facteur comparatif en vigueur"
+        ]
+      },
+      {
+        title: 'Application des taux progressifs',
+        content: "Saint-Lambert applique les taux provinciaux standards :",
+        items: [
+          "Première tranche (0-61 500$) : 0,5%",
+          "Deuxième tranche (61 500-307 800$) : 1,0%",
+          "Tranche supérieure (307 800$+) : 1,5%"
         ]
       }
     ],
     example: {
-      title: 'Exemple de calcul détaillé',
-      propertyValue: '700 000 $',
+      title: 'Exemple pour propriété typique lambertoise',
+      propertyValue: '750 000 $ (fourchette courante)',
       calculation: [
-        { range: '0 $ à 58 900 $ × 0,5%', amount: '294,50 $' },
-        { range: '58 900 $ à 294 600 $ × 1,0%', amount: '2 357,00 $' },
-        { range: '294 600 $ à 500 000 $ × 1,5%', amount: '3 081,00 $' },
-        { range: '500 000 $ à 700 000 $ × 2,0%', amount: '4 000,00 $' }
+        { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
+        { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
+        { range: '307 800 $ à 750 000 $ × 1,5%', amount: '6 633,00 $' }
       ],
-      total: '9 732,50 $'
+      total: '9 403,50 $'
     },
     paymentInfo: {
-      title: 'Modalités de paiement',
-      content: "La Ville de Montréal expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement. Les contribuables peuvent régler par virement bancaire, chèque ou aux comptoirs de services de la Ville."
+      title: 'Modalités de règlement',
+      content: "La Ville de Saint-Lambert transmet la facture approximativement 30 jours après l'enregistrement de l'acte de vente. Le règlement doit s'effectuer dans le délai de 30 jours suivant la réception. Modes de paiement acceptés : transfert bancaire électronique, chèque certifié ou dépôt direct aux services municipaux. Pénalités et intérêts composés applicables en cas de retard."
     }
   },
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier de Saint-Lambert : prestige de la Rive-Sud',
     sections: [
       {
-        title: 'Évolution des prix',
-        content: "Le marché immobilier montréalais a connu une croissance soutenue. Entre 1999 et 2024, la valeur moyenne des résidences unifamiliales a presque sextuplé, passant de 155 446 $ à 925 599 $, la plus forte augmentation de toutes les régions du Québec.",
+        title: 'Positionnement haut de gamme',
+        content: "Saint-Lambert se positionne parmi les municipalités les plus recherchées et dispendieuses de la Rive-Sud montréalaise. Le marché immobilier se caractérise par sa stabilité, sa clientèle aisée et la rareté de l'offre. Les valeurs médianes varient substantiellement selon les secteurs.",
         stats: [
-          { year: '1999', value: '155 446 $' },
-          { year: '2024', value: '925 599 $' }
+          { label: 'Unifamiliales Vieux-Saint-Lambert', value: '850-1,2M$' },
+          { label: 'Unifamiliales secteur Préville', value: '700-900K$' },
+          { label: 'Condos secteur Victoria', value: '450-650K$' },
+          { label: 'Maisons de ville récentes', value: '550-750K$' }
         ]
       },
       {
-        title: 'Facteurs influençant le marché',
+        title: 'Facteurs de valorisation',
         items: [
-          { icon: Users, text: "Immigration internationale : Alimente continuellement la demande en logements" },
-          { icon: TrendingUp, text: "Taux d'intérêt : Influencent directement la capacité d'emprunt" },
-          { icon: Building2, text: "Infrastructures : REM et prolongements de métro stimulent le développement" },
-          { icon: Home, text: "Pénurie de logements : Exerce une pression à la hausse sur les prix" }
+          { icon: Users, text: "Démographie aisée : revenus moyens parmi les plus élevés de la région métropolitaine" },
+          { icon: TrendingUp, text: "Patrimoine architectural : maisons centenaires victorieuses et édouardiennes préservées" },
+          { icon: Building2, text: "Localisation stratégique : 3 stations métro à proximité (Longueuil, Jean-Drapeau via passerelle)" },
+          { icon: Home, text: "Qualité de vie : parc Saint-Lambert, avenue Victoria commerciale, écoles réputées" }
         ]
       }
     ]
@@ -281,89 +287,104 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "L'avenir de Montréal : perspectives d'investissement",
+    title: "Investir à Saint-Lambert : un choix de prestige",
     items: [
       {
         icon: Building2,
-        title: 'Développements infrastructurels',
-        description: 'Le Réseau express métropolitain améliore la desserte des quartiers périphériques. Les projets de revitalisation dans l\'est de Montréal et le long du fleuve créent de nouvelles opportunités d\'investissement.'
+        title: 'Accessibilité exceptionnelle',
+        description: 'Connexion directe à Montréal : métro Longueuil-Université-de-Sherbrooke, REM vers centre-ville, pont Victoria historique. Proximité immédiate autoroutes 10, 20, 132. Trajet <15 min vers centre-ville Montréal.'
       },
       {
         icon: Users,
-        title: 'Tendances démographiques',
-        description: 'La croissance soutenue alimentée par l\'immigration garantit une demande continue. Montréal attire des travailleurs qualifiés en technologie, IA et aérospatiale.'
+        title: 'Communauté établie et prospère',
+        description: 'Population de 22 000+ résidents avec revenus élevés et niveau d\'éducation supérieur. Ville fondée en 1857 avec riche histoire. Communauté anglophone et francophone bien intégrée. Stabilité démographique.'
       },
       {
         icon: Home,
-        title: 'Marché locatif dynamique',
-        description: 'Taux d\'inoccupation faible et demande soutenue près des campus, du centre-ville et dans les quartiers bien desservis par le transport en commun.'
+        title: 'Patrimoine et caractère unique',
+        description: 'Architecture victorienne et édouardienne préservée dans Vieux-Saint-Lambert. Règlements municipaux stricts protégeant caractère patrimonial. Rues arborées, parcs matures, église historique. Ambiance villageoise unique.'
       },
       {
         icon: TrendingUp,
-        title: 'Propriétés multifamiliales',
-        description: 'Les duplex et triplex permettent de générer des revenus locatifs tout en habitant la propriété. Stratégie populaire pour réduire le coût d\'habitation.'
+        title: 'Stabilité et appréciation',
+        description: 'Marché stable avec faible volatilité. Demande constante pour propriétés de qualité. Inventaire limité maintient valeurs élevées. Excellent investissement long terme pour préservation capital et appréciation modérée.'
       }
     ]
   },
 
-  // Broker Comparison section
+  // Broker Comparison section - RÉÉCRIT POUR SAINT-LAMBERT
   brokerComparison: {
-    title: 'Courtier vs Démarcheur hypothécaire',
-    subtitle: 'Comprendre la différence peut vous faire économiser des dizaines de milliers de dollars',
+    title: 'Courtier spécialisé vs Conseiller bancaire traditionnel',
+    subtitle: 'Pour des propriétés haut de gamme à Saint-Lambert, l\'expertise fait toute la différence',
     independentBroker: {
-      title: 'Courtier hypothécaire indépendant',
+      title: 'Courtier hypothécaire spécialisé',
       items: [
-        'Travaille pour vous, le client',
-        'Accès à 20+ prêteurs (banques, caisses, prêteurs privés)',
-        'Compare des dizaines d\'offres pour trouver la meilleure',
-        'Négocie en votre nom pour obtenir les meilleures conditions',
-        'Services gratuits (rémunéré par la banque)',
-        'Stratégies fiscales (manœuvre Smith, MAPA)',
-        'Dossiers complexes (autonomes, nouveaux arrivants, crédit imparfait)'
+        'Représentation exclusive de VOS intérêts d\'acheteur',
+        'Accès à 20+ institutions incluant prêteurs privés haut de gamme',
+        'Négociation experte pour propriétés de 700K$ à 1,2M$+',
+        'Connaissance approfondie du marché prestigieux de Saint-Lambert',
+        'Structuration complexe pour situations patrimoniales élaborées',
+        'Optimisation fiscale avancée (Smith, MAPA, stratégies corporatives)',
+        'Service gratuit (compensation par institution prêteuse)'
       ]
     },
     bankAgent: {
-      title: 'Démarcheur hypothécaire',
+      title: 'Conseiller bancaire standard',
       items: [
-        'Travaille pour une seule banque',
-        'Accès limité aux produits de son employeur',
-        'Aucune comparaison avec d\'autres institutions',
-        'Politiques rigides de l\'institution',
-        'Taux non négociables selon la grille tarifaire',
-        'Options limitées pour dossiers complexes',
-        'Peut refuser les dossiers non standard'
+        'Employé salarié d\'une seule institution',
+        'Catalogue de produits limité à son employeur',
+        'Grille tarifaire standardisée non négociable',
+        'Processus d\'approbation rigide et automatisé',
+        'Absence de comparaison avec offres concurrentes',
+        'Flexibilité limitée pour dossiers complexes',
+        'Vision restreinte aux politiques internes uniquement'
       ]
     },
     financialImpact: {
-      title: 'Impact financier',
-      content: 'Dans un marché où les prix ont considérablement augmenté, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence.'
+      title: 'Impact financier significatif',
+      content: 'Pour une propriété de 850 000$ typique à Saint-Lambert, la différence entre un taux standard et un taux optimisé peut représenter entre 25 000$ et 50 000$ sur la durée totale du prêt. Un courtier spécialisé dans le haut de gamme maximise systématiquement vos conditions de financement.'
     }
   },
 
-  // Practical Tips section
+  // Practical Tips section - RÉÉCRIT POUR SAINT-LAMBERT
   practicalTips: {
-    title: 'Conseils pratiques pour les acheteurs',
+    title: 'Guide d\'achat immobilier à Saint-Lambert',
     tips: [
       {
         icon: Calculator,
-        title: 'Prévoir la taxe dans votre budget',
-        content: "Il est impératif d'incluer la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
-        note: "De nombreux primo-accédants sont surpris par l'ampleur de cette dépense. Utilisez notre calculateur pour éviter les mauvaises surprises."
+        title: 'Planifier l\'investissement global',
+        content: "Au-delà du prix d'achat élevé, anticipez tous les frais : taxe de bienvenue (~9 404$ pour 750K$, ~11 653$ pour 900K$), honoraires notariaux majorés (2 000-3 500$), inspection spécialisée pour propriétés anciennes (800-1 500$), évaluation (400-700$).",
+        note: "Les propriétés patrimoniales peuvent nécessiter inspections additionnelles (structure, fondations) et rénovations conformes aux règlements municipaux stricts de préservation."
       },
       {
         icon: TrendingUp,
-        title: 'Optimiser votre stratégie d\'achat',
-        content: "Selon votre situation familiale et financière, vous pourriez être admissible à différents programmes d'aide qui réduiront substantiellement le coût de la taxe de bienvenue.",
+        title: 'Comprendre les secteurs prisés',
+        content: "Vieux-Saint-Lambert : prestige maximal, architecture centenaire, valeurs 850K$-1,2M$+. Préville : résidentiel haut de gamme, tranquillité, 700-900K$. Victoria : vie urbaine, commerces, mix condos (450-650K$) et maisons. Proximité métro : condos jeunes professionnels.",
         items: [
-          "Renseignez-vous sur les programmes municipaux",
-          "Travaillez avec un courtier hypothécaire indépendant",
-          "Consultez un notaire compétent"
+          "Vérifier règlements municipaux si rénovations envisagées (protection patrimoniale)",
+          "Évaluer taxes municipales et scolaires (élevées mais services de qualité)",
+          "Considérer accessibilité : métro Longueuil à 5-10 min, REM proche"
         ]
       },
       {
         icon: DollarSign,
-        title: 'Comprendre la structure progressive',
-        content: "La structure progressive signifie que plus votre propriété est dispendieuse, plus le taux marginal augmente. Une propriété à 495 000 $ sera taxée différemment qu'une à 505 000 $ en raison du passage au taux de 2% pour la portion excédant 500 000 $."
+        title: 'Optimiser financement haut de gamme',
+        content: "Travailler avec courtier spécialisé en propriétés de prestige. Pour achat 750-900K$, revenu familial requis : 140-170K$/an minimum (ratio 35% recommandé). Explorer amortissement 30 ans si éligible pour réduire paiements mensuels.",
+        items: [
+          "Préautorisation solide essentielle (marché compétitif, offres multiples fréquentes)",
+          "Considérer mise de fonds >20% pour meilleures conditions et éviter SCHL",
+          "Stratégies fiscales avancées pour optimiser déductibilité"
+        ]
+      },
+      {
+        icon: Home,
+        title: 'Investir dans le prestige',
+        content: "Saint-Lambert offre combinaison rare : proximité Montréal (<15 min centre-ville), patrimoine architectural préservé, qualité de vie exceptionnelle, communauté établie prospère. Stabilité du marché assure préservation capital long terme.",
+        items: [
+          "Visiter plusieurs propriétés pour comprendre nuances entre secteurs",
+          "Consulter courtier immobilier expert Saint-Lambert (marché spécifique)",
+          "Évaluer mode de vie : ville piétonnière, Avenue Victoria, parc Saint-Lambert"
+        ]
       }
     ]
   },
@@ -371,31 +392,35 @@ const CITY_CONTENT = {
   // FAQ section
   faq: {
     title: 'Questions fréquentes',
-    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue",
+    subtitle: "Réponses pour votre achat immobilier à Saint-Lambert",
     items: [
       {
-        q: "Qu'est-ce que la taxe de bienvenue ?",
-        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Montréal. Elle a été instaurée en 1976."
+        q: "Quel est le montant de la taxe de bienvenue à Saint-Lambert ?",
+        a: "Pour une propriété de 750 000$ (typique à Saint-Lambert), la taxe s'élève à 9 403,50$. Pour une propriété de 900 000$, elle atteint 11 653,50$. Pour un condo de 500 000$, comptez environ 5 653,50$. Le montant augmente progressivement selon la valeur."
       },
       {
-        q: 'Quand dois-je payer la taxe de bienvenue ?',
-        a: "La Ville de Montréal envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Le paiement doit se faire en un seul versement."
+        q: 'Pourquoi les propriétés sont-elles plus chères à Saint-Lambert ?',
+        a: "Saint-Lambert combine plusieurs facteurs de valorisation : proximité immédiate Montréal (métro, REM), patrimoine architectural centenaire préservé, communauté aisée établie, Avenue Victoria commerciale animée, excellentes écoles, règlements stricts protégeant caractère distinctif."
       },
       {
-        q: "Comment est calculée la base d'imposition ?",
-        a: "La base d'imposition correspond au montant le plus élevé entre le prix de vente (sans TPS/TVQ), la contrepartie stipulée, ou la valeur marchande selon le rôle d'évaluation."
+        q: 'Quels revenus sont nécessaires pour acheter à Saint-Lambert ?',
+        a: "Pour une unifamiliale de 750 000$, un revenu familial d'environ 140 000-150 000$/an est recommandé. Pour 900 000$, visez 170 000$/an+. Pour un condo de 500 000$, environ 95 000$/an suffit. Un courtier hypothécaire peut optimiser votre capacité d'emprunt."
       },
       {
-        q: 'Puis-je être exempté de la taxe de bienvenue ?',
-        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints, entre parents-enfants (conditions applicables), legs par testament, et programmes d'aide pour premiers acheteurs avec famille."
+        q: 'Quels sont les meilleurs secteurs de Saint-Lambert ?',
+        a: "Vieux-Saint-Lambert : prestige, architecture historique, 850K$-1,2M$+. Préville : résidentiel haut de gamme, tranquillité, 700-900K$. Victoria : urbain, commerces, mix condos (450-650K$) et maisons. Proximité métro : condos jeunes professionnels, excellent investissement."
+      },
+      {
+        q: 'Y a-t-il des règlements particuliers à Saint-Lambert ?',
+        a: "Oui, Saint-Lambert a des règlements stricts de protection patrimoniale, notamment dans le Vieux-Saint-Lambert. Rénovations extérieures peuvent nécessiter approbations municipales. Consultez urbanisme municipal avant travaux majeurs pour assurer conformité."
       }
     ]
   },
 
   // Final CTA section
   finalCta: {
-    title: 'Prêt à économiser sur votre achat immobilier ?',
-    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement',
+    title: 'Réalisez votre projet immobilier à Saint-Lambert',
+    subtitle: 'Nos courtiers spécialisés en propriétés de prestige vous accompagnent pour obtenir le financement optimal dans cette ville d\'exception',
     buttons: [
       { text: 'Appelez-nous maintenant', icon: Phone },
       { text: 'Demander une soumission', icon: Mail }
@@ -404,7 +429,7 @@ const CITY_CONTENT = {
 
   // Footer
   footer: {
-    about: "Experts en financement hypothécaire à Montréal, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
+    about: "Experts en financement hypothécaire haut de gamme sur la Rive-Sud, nous maîtrisons les spécificités du marché prestigieux de Saint-Lambert pour vous obtenir les meilleures conditions.",
     links: [
       { text: 'Calculateur de prêt', href: '#' },
       { text: 'Taux hypothécaires', href: '#' },
@@ -412,15 +437,14 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
+      phone: '(450) 678-9012',
       email: 'info@votresite.com',
-      address: 'Montréal, Québec'
+      address: 'Saint-Lambert, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2025 Calculateur Taxe de Bienvenue Saint-Lambert. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
-
 // ======================
 // MAIN COMPONENT
 // ======================
@@ -1405,14 +1429,14 @@ export default function MontrealWelcomeTaxPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-white font-bold text-lg mb-4">À propos</h3>
               <p className="text-sm leading-relaxed">
                 {CITY_CONTENT.footer.about}
               </p>
             </div>
-            
+           
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Contact</h3>
               <ul className="space-y-3 text-sm">

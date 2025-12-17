@@ -23,17 +23,17 @@ import {
 const CITY_CONTENT = {
   // Basic city information
   city: {
-    name: 'Montréal',
-    displayName: 'Montréal',
+    name: 'Laval',
+    displayName: 'Laval',
     year: '2025',
-    heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
+    heroImage: 'https://imgs.search.brave.com/9ZqY8YH0xQJ5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dG91cmlzbWVsYXZh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDUvY2Vu/dHJlLXZpbGxlLWxh/dmFsLmpwZw',
   },
 
   // Available cities for the top bar
   availableCities: [
-    { name: 'Montréal', path: '/' },
+    { name: 'Montréal', path: '/montreal' },
     { name: 'Québec', path: '/quebec' },
-    { name: 'Laval', path: '/laval' },
+    { name: 'Laval', path: '/' },
     { name: 'Chambly', path: '/chambly' },
     { name: 'Candiac', path: '/candiac' },
     { name: 'Saint-Lambert', path: '/saint-lambert' },
@@ -42,10 +42,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Laval en 2025',
     features: [
       'Calcul instantané',
-      'Taux 2026',
+      'Taux 2025',
       '100% gratuit'
     ]
   },
@@ -55,161 +55,155 @@ const CITY_CONTENT = {
     title: 'Calculateur',
     subtitle: 'Taxe de bienvenue 2025',
     inputLabel: "Prix d'achat de la propriété",
-    inputPlaceholder: '500 000',
+    inputPlaceholder: '600 000',
     buttonText: 'Calculer maintenant',
     buttonHint: 'Appuyez sur Entrée ou cliquez sur le bouton pour calculer',
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Laval • 2025',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2025 rates for Laval - provincial standard rates)
   taxBrackets: [
-    { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
-    { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
-    { max: 500000, rate: 1.5, name: '294 600 $ à 500 000 $' },
-    { max: 1000000, rate: 2.0, name: '500 000 $ à 1 000 000 $' },
-    { max: 2000000, rate: 2.5, name: '1 000 000 $ à 2 000 000 $' },
-    { max: Infinity, rate: 3.0, name: 'Plus de 2 000 000 $' },
+    { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
+    { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
+    { max: Infinity, rate: 1.5, name: 'Plus de 307 800 $' },
   ],
 
   // CTA Form section
   ctaForm: {
-    title: 'Obtenez un accompagnement personnalisé',
-    subtitle: 'Nos experts en financement hypothécaire vous aident à optimiser votre achat et à économiser sur votre taxe de bienvenue',
-    formTitle: 'Formulaire Zoho',
-    formDescription: 'Insérez votre formulaire Zoho ici pour capturer les leads',
+    title: 'Experts hypothécaires à Laval',
+    subtitle: 'Nos spécialistes du financement immobilier à Laval vous accompagnent pour maximiser votre capacité d\'achat et réduire vos coûts d\'acquisition',
+    formTitle: 'Formulaire de contact',
+    formDescription: 'Remplissez ce formulaire pour une consultation gratuite avec nos experts lavallois',
     benefits: [
-      { title: 'Consultation gratuite', description: 'Sans engagement' },
-      { title: 'Meilleurs taux', description: 'Comparaison de 20+ prêteurs' },
-      { title: 'Service personnalisé', description: 'Accompagnement complet' }
+      { title: 'Évaluation gratuite', description: 'Aucun frais, aucun engagement' },
+      { title: 'Taux compétitifs', description: 'Accès à 20+ institutions' },
+      { title: 'Expertise locale', description: 'Connaissance du marché lavallois' }
     ]
   },
 
   // Tax brackets display
   bracketsDisplay: {
     title: 'Grille des taux 2025',
-    subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
+    subtitle: 'Tranches d\'imposition des droits de mutation à Laval',
     brackets: [
-      { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
-      { range: '58 900 $ à 294 600 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
-      { range: '294 600 $ à 500 000 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
-      { range: '500 000 $ à 1 000 000 $', rate: '2,0%', color: 'from-orange-500 to-amber-600' },
-      { range: '1 000 000 $ à 2 000 000 $', rate: '2,5%', color: 'from-red-500 to-rose-600' },
-      { range: 'Plus de 2 000 000 $', rate: '3,0%', color: 'from-slate-700 to-slate-900' },
+      { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
+      { range: '61 500 $ à 307 800 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
+      { range: 'Plus de 307 800 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
     ]
   },
 
   // City statistics
   statistics: {
-    title: 'Montréal en chiffres',
-    subtitle: 'La métropole la plus dynamique du Québec',
+    title: 'Laval en chiffres',
+    subtitle: 'La 3e ville du Québec en pleine effervescence',
     stats: [
-      { icon: Users, value: '4,3M', label: 'habitants en région métropolitaine' },
-      { icon: TrendingUp, value: '+4,2%', label: 'croissance démographique annuelle' },
-      { icon: Building2, value: '19', label: 'arrondissements distincts' },
-      { icon: Home, value: '925K$', label: 'prix moyen maison unifamiliale' },
+      { icon: Users, value: '460K', label: 'habitants (3e ville du Québec)' },
+      { icon: TrendingUp, value: '+17%', label: 'ventes unifamiliales en 2024' },
+      { icon: Building2, value: '14', label: 'quartiers distincts' },
+      { icon: Home, value: '600K$', label: 'prix médian unifamiliale (avril 2025)' },
     ]
   },
 
   // Neighborhoods
   neighborhoods: {
-    title: 'Les quartiers de Montréal',
-    subtitle: 'Découvrez les arrondissements les plus prisés pour votre investissement immobilier',
+    title: 'Les quartiers de Laval',
+    subtitle: 'Découvrez les 14 secteurs issus de la fusion de 1965 pour votre investissement immobilier',
     items: [
       {
-        name: 'Le Plateau-Mont-Royal',
-        description: 'Quartier artistique et bohème avec ses escaliers extérieurs emblématiques et sa vie culturelle dynamique.',
-        icon: '🎨',
-      },
-      {
-        name: 'Ville-Marie',
-        description: 'Centre névralgique avec le Vieux-Montréal, le centre-ville et le Quartier des spectacles.',
+        name: 'Chomedey',
+        description: 'Le cœur urbain avec 94 000 habitants. Centropolis, Carrefour Laval et la plus grande diversité culturelle. Condos de 390K$ à 969K$.',
         icon: '🏙️',
       },
       {
-        name: 'Rosemont–La Petite-Patrie',
-        description: 'Ambiance familiale avec le marché Jean-Talon et des prix plus accessibles.',
+        name: 'Vimont',
+        description: 'Centre géographique de Laval, quartier familial par excellence. Train de banlieue, hôpital principal et grands espaces verts. 359K$ à 1,125M$.',
         icon: '👨‍👩‍👧‍👦',
       },
       {
-        name: 'Outremont',
-        description: 'Élégance et raffinement avec ses maisons bourgeoises et ses rues arborées.',
-        icon: '🌳',
+        name: 'Sainte-Rose',
+        description: 'Charme patrimonial du Vieux-Sainte-Rose fondé en 1740. Église historique (1856), galeries d\'art et proximité rivière des Mille Îles.',
+        icon: '🏛️',
       },
       {
-        name: 'Le Sud-Ouest',
-        description: 'Secteur en transformation avec le canal de Lachine et des prix attractifs.',
-        icon: '🚢',
-      },
-      {
-        name: 'Ahuntsic-Cartierville',
-        description: 'Tranquillité et espaces verts en bordure de la rivière des Prairies.',
+        name: 'Fabreville',
+        description: '2e quartier le plus peuplé (48 000 habitants). Secteur familial tranquille en bordure de la rivière des Mille Îles. 579K$ à 989K$.',
         icon: '🌊',
+      },
+      {
+        name: 'Laval-sur-le-Lac',
+        description: 'Le "Westmount de Laval". Résidences haut de gamme en bordure du lac des Deux Montagnes. Quartier cossu et exclusif.',
+        icon: '💎',
+      },
+      {
+        name: 'Pont-Viau et Laval-des-Rapides',
+        description: 'Accès direct à Montréal via pont Viau et métro Cartier. Plex à partir de 575K$, idéal pour investisseurs et jeunes professionnels.',
+        icon: '🚇',
       },
     ]
   },
 
-  // Benefits section
+  // Benefits section - RÉÉCRIT POUR LAVAL
   benefits: {
-    title: 'Pourquoi choisir un courtier hypothécaire indépendant ?',
-    subtitle: 'Maximisez vos économies et optimisez votre financement',
+    title: 'Pourquoi travailler avec un courtier multi-prêteurs à Laval ?',
+    subtitle: 'Optimisez votre financement dans le marché immobilier lavallois',
     items: [
       {
-        title: 'Accès à 20+ prêteurs',
-        description: 'Comparaison exhaustive des offres de toutes les institutions financières pour trouver le meilleur taux.',
+        title: 'Accès privilégié au marché du financement',
+        description: 'Nos courtiers analysent plus de 20 institutions financières - grandes banques, Desjardins, prêteurs alternatifs - pour trouver la solution adaptée au marché lavallois où le prix médian atteint 600K$.',
         icon: <Building2 className="w-8 h-8" />,
       },
       {
-        title: 'Économies substantielles',
-        description: "Chaque 0,1% économisé sur votre taux représente des milliers de dollars sur la durée du prêt.",
+        title: 'Réduction significative de vos coûts',
+        description: "Sur un prêt de 600 000 $ (médiane à Laval), économiser 0,15% représente 13 500 $ sur 25 ans. Nos courtiers négocient activement pour vous.",
         icon: <DollarSign className="w-8 h-8" />,
       },
       {
-        title: 'Service gratuit',
-        description: 'Le courtier est rémunéré par la banque, ses services ne vous coûtent rien.',
+        title: 'Sans frais pour vous',
+        description: 'Les institutions financières rémunèrent directement votre courtier. Vous bénéficiez d\'une expertise professionnelle sans débourser un dollar.',
         icon: <CheckCircle className="w-8 h-8" />,
       },
       {
-        title: 'Expertise fiscale',
-        description: 'Stratégies avancées comme la manœuvre Smith ou le MAPA pour optimiser votre situation.',
+        title: 'Stratégies fiscales avancées',
+        description: 'Manœuvre Smith, MAPA et autres techniques de déductibilité fiscale pour les propriétaires lavallois qui souhaitent maximiser leurs avantages.',
         icon: <TrendingUp className="w-8 h-8" />,
       },
       {
-        title: 'Dossiers complexes',
-        description: 'Solutions pour travailleurs autonomes, nouveaux arrivants et situations de crédit particulières.',
+        title: 'Solutions pour profils atypiques',
+        description: 'Travailleurs autonomes, nouveaux arrivants dans la communauté multiculturelle lavalloise, situations de crédit particulières : nous trouvons des solutions.',
         icon: <Users className="w-8 h-8" />,
       },
       {
-        title: 'Accompagnement complet',
-        description: 'Support personnalisé du début à la fin, incluant la négociation et le suivi de votre dossier.',
+        title: 'Suivi personnalisé du dossier',
+        description: 'De la préautorisation jusqu\'à la signature chez le notaire, votre courtier coordonne toutes les étapes de votre financement immobilier à Laval.',
         icon: <ArrowRight className="w-8 h-8" />,
       },
     ]
   },
 
-  // Programs section
+  // Programs section - RÉÉCRIT POUR LAVAL
   programs: {
-    title: "Programmes d'aide disponibles",
-    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux programmes municipaux",
+    title: "Aide financière et exemptions à Laval",
+    subtitle: "Réduisez votre fardeau fiscal lors de l'achat de votre propriété lavalloise",
     items: [
       {
-        title: "Programme d'accession à la propriété",
+        title: "Exemptions provinciales applicables",
         description: [
-          "Remboursement jusqu'à 100% pour les familles",
-          "Pour les premiers acheteurs",
-          "Économies de plusieurs milliers de dollars"
+          "Transferts entre époux ou conjoints de fait (lors de séparation/divorce)",
+          "Transferts parents-enfants selon critères légaux spécifiques",
+          "Successions testamentaires (droit supplétif max 200$)"
         ]
       },
       {
-        title: "Exemptions légales",
+        title: "Mesures fédérales récentes",
         description: [
-          "Transferts entre conjoints",
-          "Transferts parents-enfants (conditions applicables)",
-          "Legs par testament"
+          "Amortissement sur 30 ans pour premiers acheteurs (depuis déc. 2024)",
+          "Amortissement 30 ans pour constructions neuves",
+          "Crédit d'impôt première habitation (paliers provincial et fédéral)"
         ]
       }
     ]
@@ -217,63 +211,73 @@ const CITY_CONTENT = {
 
   // What is Welcome Tax section
   whatIsWelcomeTax: {
-    title: "Qu'est-ce que la taxe de bienvenue à Montréal ?",
+    title: "Qu'est-ce que la taxe de bienvenue à Laval ?",
     content: [
-      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Montréal. Cette contribution financière tire son appellation du nom de Jean Bienvenue, ancien ministre des Affaires municipales du Québec qui a instauré cette mesure en 1976.",
-      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie considérablement selon la valeur de la transaction et représente souvent une somme substantielle que les acheteurs doivent prévoir dans leur budget d'acquisition."
+      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Laval. Cette contribution financière tire son appellation d'une croyance populaire attribuant son origine au ministre Jean Bienvenue. Toutefois, l'historien Frédéric Lemieux, œuvrant au service de la recherche de la bibliothèque de l'Assemblée nationale du Québec, a démontré que cette présomption était fausse.",
+      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale à Laval, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex, d'un plex ou d'un immeuble à revenus. Le montant à payer varie selon la valeur de la transaction. À Laval, comme dans la majorité des municipalités québécoises, les taux appliqués suivent les tranches provinciales standards sans majoration, contrairement à Montréal."
     ]
   },
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Laval en 2025 ?',
     sections: [
       {
-        title: 'Base d\'imposition',
-        content: "Le calcul des droits de mutation s'effectue sur la base d'imposition, qui correspond au montant le plus élevé parmi :",
+        title: 'Base d\'imposition à Laval',
+        content: "Le calcul s'effectue sur le montant le plus élevé parmi :",
         items: [
-          "Le prix de vente inscrit dans l'acte notarié (excluant TPS et TVQ)",
+          "Le prix de vente inscrit dans l'acte notarié (sans TPS/TVQ)",
           "La contrepartie stipulée pour le transfert",
-          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif"
+          "La valeur selon le rôle d'évaluation × facteur comparatif (1,002 pour Laval en 2025)"
+        ]
+      },
+      {
+        title: 'Taux progressifs provinciaux',
+        content: "Laval applique les taux standards sans majoration :",
+        items: [
+          "0 $ à 61 500 $ : taux de 0,5%",
+          "61 500 $ à 307 800 $ : taux de 1,0%",
+          "Plus de 307 800 $ : taux de 1,5%"
         ]
       }
     ],
     example: {
-      title: 'Exemple de calcul détaillé',
-      propertyValue: '700 000 $',
+      title: 'Exemple pour une propriété médiane lavalloise',
+      propertyValue: '600 000 $ (prix médian avril 2025)',
       calculation: [
-        { range: '0 $ à 58 900 $ × 0,5%', amount: '294,50 $' },
-        { range: '58 900 $ à 294 600 $ × 1,0%', amount: '2 357,00 $' },
-        { range: '294 600 $ à 500 000 $ × 1,5%', amount: '3 081,00 $' },
-        { range: '500 000 $ à 700 000 $ × 2,0%', amount: '4 000,00 $' }
+        { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
+        { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
+        { range: '307 800 $ à 600 000 $ × 1,5%', amount: '4 383,00 $' }
       ],
-      total: '9 732,50 $'
+      total: '7 153,50 $'
     },
     paymentInfo: {
-      title: 'Modalités de paiement',
-      content: "La Ville de Montréal expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement. Les contribuables peuvent régler par virement bancaire, chèque ou aux comptoirs de services de la Ville."
+      title: 'Options de paiement à Laval',
+      content: "La Ville expédie la facture ~30 jours après l'inscription de l'acte. Paiement dans les 30 jours. Pour montants >300$, option de 2 versements disponible. Paiement possible par virement bancaire, chèque (CP 11051, Montréal H3C 0R9) ou au 1333 boul. Chomedey, bureau 101."
     }
   },
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier lavallois : boom de 2025',
     sections: [
       {
-        title: 'Évolution des prix',
-        content: "Le marché immobilier montréalais a connu une croissance soutenue. Entre 1999 et 2024, la valeur moyenne des résidences unifamiliales a presque sextuplé, passant de 155 446 $ à 925 599 $, la plus forte augmentation de toutes les régions du Québec.",
+        title: 'Reprise spectaculaire du marché',
+        content: "Le marché lavallois connaît une vigueur remarquable en 2024-2025. Les ventes de maisons unifamiliales ont bondi de 17% en 2024, avec 2 571 transactions au 30 novembre 2025 (+12% vs 2024). Cette reprise s'explique par les 9 baisses consécutives du taux directeur (de 5% en mai 2024 à 2,25% en oct. 2025).",
         stats: [
-          { year: '1999', value: '155 446 $' },
-          { year: '2024', value: '925 599 $' }
+          { label: 'Prix médian unifamiliale (avril 2025)', value: '600 000 $' },
+          { label: 'Hausse annuelle', value: '+3%' },
+          { label: 'Prix médian condo', value: '410 000 $' },
+          { label: 'Délai de vente moyen', value: '42 jours' }
         ]
       },
       {
-        title: 'Facteurs influençant le marché',
+        title: 'Dynamiques du marché lavallois',
         items: [
-          { icon: Users, text: "Immigration internationale : Alimente continuellement la demande en logements" },
-          { icon: TrendingUp, text: "Taux d'intérêt : Influencent directement la capacité d'emprunt" },
-          { icon: Building2, text: "Infrastructures : REM et prolongements de métro stimulent le développement" },
-          { icon: Home, text: "Pénurie de logements : Exerce une pression à la hausse sur les prix" }
+          { icon: Users, text: "460 396 habitants : 3e ville du Québec, 2e pour proportion d'immigrants" },
+          { icon: TrendingUp, text: "Appréciation spectaculaire : valeur moyenne passée de 108 607$ (1999) à 627 295$ (2024)" },
+          { icon: Building2, text: "Rareté de l'offre : 1 409 inscriptions fin nov. 2025, niveau identique à 2024" },
+          { icon: Home, text: "Marché vendeurs : ratio ventes/inscriptions de 81% en avril 2025" }
         ]
       }
     ]
@@ -281,89 +285,104 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "L'avenir de Montréal : perspectives d'investissement",
+    title: "Investir à Laval : perspectives 2025",
     items: [
       {
         icon: Building2,
-        title: 'Développements infrastructurels',
-        description: 'Le Réseau express métropolitain améliore la desserte des quartiers périphériques. Les projets de revitalisation dans l\'est de Montréal et le long du fleuve créent de nouvelles opportunités d\'investissement.'
+        title: 'Position stratégique unique',
+        description: '3 stations de métro (Cartier, De la Concorde, Montmorency), accès autoroutes 15/440/13, train de banlieue Exo. Prix médian 600K$ vs 800K$ à Montréal pour une unifamiliale.'
       },
       {
         icon: Users,
-        title: 'Tendances démographiques',
-        description: 'La croissance soutenue alimentée par l\'immigration garantit une demande continue. Montréal attire des travailleurs qualifiés en technologie, IA et aérospatiale.'
+        title: 'Croissance démographique soutenue',
+        description: 'Population de 460K en 2025, +112 200 personnes depuis 1998. Immigration internationale moteur principal. Projections +4,6% d\'ici 2026. Âge moyen jeune, forte présence familiale.'
       },
       {
         icon: Home,
-        title: 'Marché locatif dynamique',
-        description: 'Taux d\'inoccupation faible et demande soutenue près des campus, du centre-ville et dans les quartiers bien desservis par le transport en commun.'
+        title: 'Diversité de quartiers attractifs',
+        description: '14 quartiers distincts : Chomedey urbain et multiculturel, Vimont familial, Sainte-Rose patrimonial, Laval-sur-le-Lac prestigieux. Options pour tous budgets de 359K$ à 1,125M$+.'
       },
       {
         icon: TrendingUp,
-        title: 'Propriétés multifamiliales',
-        description: 'Les duplex et triplex permettent de générer des revenus locatifs tout en habitant la propriété. Stratégie populaire pour réduire le coût d\'habitation.'
+        title: 'Marché locatif et plex dynamiques',
+        description: 'Ventes de plex +17% en 2025 (292 transactions). Forte demande locative près du métro et dans Chomedey. Triplex à partir de 575K$ offrent revenus stables.'
       }
     ]
   },
 
-  // Broker Comparison section
+  // Broker Comparison section - RÉÉCRIT POUR LAVAL
   brokerComparison: {
-    title: 'Courtier vs Démarcheur hypothécaire',
-    subtitle: 'Comprendre la différence peut vous faire économiser des dizaines de milliers de dollars',
+    title: 'Courtier multi-prêteurs vs Représentant bancaire',
+    subtitle: 'Dans le marché lavallois en effervescence, le bon choix de financement change tout',
     independentBroker: {
-      title: 'Courtier hypothécaire indépendant',
+      title: 'Courtier hypothécaire multi-prêteurs',
       items: [
-        'Travaille pour vous, le client',
-        'Accès à 20+ prêteurs (banques, caisses, prêteurs privés)',
-        'Compare des dizaines d\'offres pour trouver la meilleure',
-        'Négocie en votre nom pour obtenir les meilleures conditions',
-        'Services gratuits (rémunéré par la banque)',
-        'Stratégies fiscales (manœuvre Smith, MAPA)',
-        'Dossiers complexes (autonomes, nouveaux arrivants, crédit imparfait)'
+        'Représente VOS intérêts d\'acheteur lavallois',
+        'Compare 20+ prêteurs pour votre dossier spécifique',
+        'Négocie les taux et conditions en votre faveur',
+        'Solutions créatives pour tous profils (autonomes, immigrants, etc.)',
+        'Expertise du marché local : connaît les spécificités lavalloises',
+        'Stratégies fiscales (Smith, MAPA) pour maximiser déductions',
+        'Gratuit pour vous (rémunération par l\'institution prêteuse)'
       ]
     },
     bankAgent: {
-      title: 'Démarcheur hypothécaire',
+      title: 'Représentant d\'une seule banque',
       items: [
-        'Travaille pour une seule banque',
-        'Accès limité aux produits de son employeur',
+        'Employé d\'une institution spécifique',
+        'Offre uniquement les produits de son employeur',
+        'Grille tarifaire fixe sans marge de négociation',
+        'Critères d\'acceptation rigides et standardisés',
         'Aucune comparaison avec d\'autres institutions',
-        'Politiques rigides de l\'institution',
-        'Taux non négociables selon la grille tarifaire',
-        'Options limitées pour dossiers complexes',
-        'Peut refuser les dossiers non standard'
+        'Peut refuser les dossiers non conventionnels',
+        'Vision limitée du marché du financement'
       ]
     },
     financialImpact: {
-      title: 'Impact financier',
-      content: 'Dans un marché où les prix ont considérablement augmenté, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence.'
+      title: 'L\'impact sur votre portefeuille',
+      content: 'Avec un prix médian de 600 000 $ à Laval (avril 2025), la différence entre un bon taux et le meilleur taux disponible peut représenter entre 15 000 $ et 40 000 $ sur la durée de votre prêt. Un courtier multi-prêteurs maximise vos chances d\'obtenir les meilleures conditions du marché.'
     }
   },
 
-  // Practical Tips section
+  // Practical Tips section - RÉÉCRIT POUR LAVAL
   practicalTips: {
-    title: 'Conseils pratiques pour les acheteurs',
+    title: 'Conseils pour acheter à Laval',
     tips: [
       {
         icon: Calculator,
-        title: 'Prévoir la taxe dans votre budget',
-        content: "Il est impératif d'incluer la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
-        note: "De nombreux primo-accédants sont surpris par l'ampleur de cette dépense. Utilisez notre calculateur pour éviter les mauvaises surprises."
+        title: 'Budgétiser tous les frais d\'acquisition',
+        content: "Au-delà du prix d'achat, intégrez la taxe de bienvenue (7 154$ pour une propriété à 600K$), les frais de notaire, l'inspection et l'évaluation. La facture moyenne de taxe atteignait 8 000$ en 2023, en hausse de 70% depuis 2017.",
+        note: "Pour un condo au prix médian de 410K$, prévoyez environ 4 304$ de taxe de bienvenue. Utilisez notre calculateur pour votre situation."
       },
       {
         icon: TrendingUp,
-        title: 'Optimiser votre stratégie d\'achat',
-        content: "Selon votre situation familiale et financière, vous pourriez être admissible à différents programmes d'aide qui réduiront substantiellement le coût de la taxe de bienvenue.",
+        title: 'Choisir le bon quartier lavallois',
+        content: "Laval offre 14 quartiers distincts issus de la fusion de 1965. Chomedey attire les jeunes professionnels (urbain, multiculturel). Vimont et Fabreville conviennent aux familles (écoles, parcs). Sainte-Rose séduit par son cachet patrimonial.",
         items: [
-          "Renseignez-vous sur les programmes municipaux",
-          "Travaillez avec un courtier hypothécaire indépendant",
-          "Consultez un notaire compétent"
+          "Proximité métro : Cartier, De la Concorde, Montmorency",
+          "Train de banlieue : gare dans plusieurs secteurs",
+          "Budget : de 359K$ (condos Vimont) à 1,125M$+ (Vimont/Laval-sur-le-Lac)"
         ]
       },
       {
         icon: DollarSign,
-        title: 'Comprendre la structure progressive',
-        content: "La structure progressive signifie que plus votre propriété est dispendieuse, plus le taux marginal augmente. Une propriété à 495 000 $ sera taxée différemment qu'une à 505 000 $ en raison du passage au taux de 2% pour la portion excédant 500 000 $."
+        title: 'Profiter du marché vendeurs intelligemment',
+        content: "Avec un ratio ventes/inscriptions de 81% et seulement 42 jours de délai moyen, le marché favorise les vendeurs mais offre plus de choix qu'en 2023. Une préautorisation solide est essentielle.",
+        items: [
+          "Revenu requis : ~113K$/an pour une unifamiliale à 600K$",
+          "Revenu requis : ~78K$/an pour un condo à 410K$",
+          "Nouvelle règle : amortissement 30 ans pour premiers acheteurs (déc. 2024)"
+        ]
+      },
+      {
+        icon: Home,
+        title: 'Considérer les plex pour investissement',
+        content: "Les ventes de plex ont explosé de 17% en 2025 (292 transactions). Triplex disponibles à partir de 575K$ dans Pont-Viau et Laval-des-Rapides. Forte demande locative grâce à la population multiculturelle et aux étudiants.",
+        items: [
+          "Générer des revenus tout en occupant votre propriété",
+          "Marché locatif dynamique (2e place au Québec pour proportion d'immigrants)",
+          "Secteurs à considérer : Chomedey, Pont-Viau, près du métro"
+        ]
       }
     ]
   },
@@ -371,31 +390,35 @@ const CITY_CONTENT = {
   // FAQ section
   faq: {
     title: 'Questions fréquentes',
-    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue",
+    subtitle: "Tout savoir sur la taxe de bienvenue à Laval",
     items: [
       {
-        q: "Qu'est-ce que la taxe de bienvenue ?",
-        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Montréal. Elle a été instaurée en 1976."
+        q: "Quelle est la taxe de bienvenue pour une maison à 600 000$ à Laval ?",
+        a: "Pour une propriété au prix médian lavallois de 600 000$ (avril 2025), la taxe de bienvenue s'élève à 7 153,50$. Ce montant se calcule par tranches : 307,50$ (première tranche), 2 463$ (deuxième tranche) et 4 383$ (troisième tranche)."
       },
       {
-        q: 'Quand dois-je payer la taxe de bienvenue ?',
-        a: "La Ville de Montréal envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Le paiement doit se faire en un seul versement."
+        q: 'Puis-je payer la taxe en plusieurs versements à Laval ?',
+        a: "Oui ! Pour les montants supérieurs à 300$, Laval offre une option de paiement en deux versements. La facture est envoyée environ 30 jours après l'inscription de l'acte. En août 2024, le Parti Laval a proposé d'étendre cette option à 4 versements sans intérêt."
       },
       {
-        q: "Comment est calculée la base d'imposition ?",
-        a: "La base d'imposition correspond au montant le plus élevé entre le prix de vente (sans TPS/TVQ), la contrepartie stipulée, ou la valeur marchande selon le rôle d'évaluation."
+        q: 'Les taux de Laval sont-ils plus avantageux que Montréal ?',
+        a: "Oui, absolument. Laval applique les taux provinciaux standards (maximum 1,5%), tandis que Montréal applique des taux bonifiés allant jusqu'à 3% pour les propriétés de plus de 2M$. Pour une propriété haut de gamme, Laval est nettement plus avantageux."
       },
       {
-        q: 'Puis-je être exempté de la taxe de bienvenue ?',
-        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints, entre parents-enfants (conditions applicables), legs par testament, et programmes d'aide pour premiers acheteurs avec famille."
+        q: 'Quel quartier de Laval choisir selon mon profil ?',
+        a: "Chomedey (94 000 hab.) : jeunes professionnels, vie urbaine, multiculturel. Vimont : familles, centre géographique, train de banlieue. Sainte-Rose : charme patrimonial, Vieux village 1740. Fabreville : tranquillité, familles. Laval-sur-le-Lac : prestige, haut de gamme."
+      },
+      {
+        q: 'Le marché de Laval est-il favorable aux acheteurs en 2025 ?',
+        a: "Le marché favorise actuellement les vendeurs avec un ratio ventes/inscriptions de 81% et 1 409 inscriptions stables. Toutefois, les ventes ont bondi de 17% (unifamiliales) grâce aux baisses de taux. Les acheteurs bien préparés avec préautorisation trouvent des opportunités."
       }
     ]
   },
 
   // Final CTA section
   finalCta: {
-    title: 'Prêt à économiser sur votre achat immobilier ?',
-    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement',
+    title: 'Prêt à devenir propriétaire à Laval ?',
+    subtitle: 'Contactez nos experts du financement immobilier lavallois pour une évaluation gratuite et découvrez comment maximiser votre pouvoir d\'achat',
     buttons: [
       { text: 'Appelez-nous maintenant', icon: Phone },
       { text: 'Demander une soumission', icon: Mail }
@@ -404,7 +427,7 @@ const CITY_CONTENT = {
 
   // Footer
   footer: {
-    about: "Experts en financement hypothécaire à Montréal, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
+    about: "Spécialistes du financement hypothécaire à Laval, nous connaissons parfaitement les 14 quartiers de la ville et vous guidons vers le meilleur financement possible.",
     links: [
       { text: 'Calculateur de prêt', href: '#' },
       { text: 'Taux hypothécaires', href: '#' },
@@ -412,11 +435,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
+      phone: '(450) 678-9012',
       email: 'info@votresite.com',
-      address: 'Montréal, Québec'
+      address: 'Laval, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2025 Calculateur Taxe de Bienvenue Laval. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };

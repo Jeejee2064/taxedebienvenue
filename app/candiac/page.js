@@ -23,29 +23,29 @@ import {
 const CITY_CONTENT = {
   // Basic city information
   city: {
-    name: 'Montréal',
-    displayName: 'Montréal',
+    name: 'Candiac',
+    displayName: 'Candiac',
     year: '2025',
-    heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
+    heroImage: 'https://imgs.search.brave.com/xH5KqLMH0vQJ5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FuZGlhYy5jYS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS9wYXJjLWhhZW5k/ZWwtY2FuZGlhYy5q/cGc',
   },
 
   // Available cities for the top bar
   availableCities: [
-    { name: 'Montréal', path: '/' },
+    { name: 'Montréal', path: '/montreal' },
     { name: 'Québec', path: '/quebec' },
     { name: 'Laval', path: '/laval' },
     { name: 'Chambly', path: '/chambly' },
-    { name: 'Candiac', path: '/candiac' },
+    { name: 'Candiac', path: '/' },
     { name: 'Saint-Lambert', path: '/saint-lambert' },
   ],
 
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Candiac en 2025',
     features: [
       'Calcul instantané',
-      'Taux 2026',
+      'Taux 2025',
       '100% gratuit'
     ]
   },
@@ -55,161 +55,157 @@ const CITY_CONTENT = {
     title: 'Calculateur',
     subtitle: 'Taxe de bienvenue 2025',
     inputLabel: "Prix d'achat de la propriété",
-    inputPlaceholder: '500 000',
+    inputPlaceholder: '550 000',
     buttonText: 'Calculer maintenant',
     buttonHint: 'Appuyez sur Entrée ou cliquez sur le bouton pour calculer',
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Candiac • 2025',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2025 rates - provincial standard)
   taxBrackets: [
-    { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
-    { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
-    { max: 500000, rate: 1.5, name: '294 600 $ à 500 000 $' },
-    { max: 1000000, rate: 2.0, name: '500 000 $ à 1 000 000 $' },
-    { max: 2000000, rate: 2.5, name: '1 000 000 $ à 2 000 000 $' },
-    { max: Infinity, rate: 3.0, name: 'Plus de 2 000 000 $' },
+    { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
+    { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
+    { max: Infinity, rate: 1.5, name: 'Plus de 307 800 $' },
   ],
 
   // CTA Form section
   ctaForm: {
-    title: 'Obtenez un accompagnement personnalisé',
-    subtitle: 'Nos experts en financement hypothécaire vous aident à optimiser votre achat et à économiser sur votre taxe de bienvenue',
-    formTitle: 'Formulaire Zoho',
-    formDescription: 'Insérez votre formulaire Zoho ici pour capturer les leads',
+    title: 'Consultation hypothécaire à Candiac',
+    subtitle: 'Nos spécialistes de la Rive-Sud vous aident à financer votre propriété à Candiac avec les meilleures conditions du marché',
+    formTitle: 'Demande de consultation',
+    formDescription: 'Obtenez une évaluation personnalisée pour votre projet immobilier à Candiac',
     benefits: [
-      { title: 'Consultation gratuite', description: 'Sans engagement' },
-      { title: 'Meilleurs taux', description: 'Comparaison de 20+ prêteurs' },
-      { title: 'Service personnalisé', description: 'Accompagnement complet' }
+      { title: 'Analyse gratuite', description: 'Sans obligation de votre part' },
+      { title: 'Expertise Rive-Sud', description: 'Connaissance du marché local' },
+      { title: 'Solutions sur mesure', description: 'Adaptées à votre situation' }
     ]
   },
 
   // Tax brackets display
   bracketsDisplay: {
     title: 'Grille des taux 2025',
-    subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
+    subtitle: 'Barème progressif des droits de mutation à Candiac',
     brackets: [
-      { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
-      { range: '58 900 $ à 294 600 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
-      { range: '294 600 $ à 500 000 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
-      { range: '500 000 $ à 1 000 000 $', rate: '2,0%', color: 'from-orange-500 to-amber-600' },
-      { range: '1 000 000 $ à 2 000 000 $', rate: '2,5%', color: 'from-red-500 to-rose-600' },
-      { range: 'Plus de 2 000 000 $', rate: '3,0%', color: 'from-slate-700 to-slate-900' },
+      { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
+      { range: '61 500 $ à 307 800 $', rate: '1,0%', color: 'from-blue-500 to-cyan-600' },
+      { range: 'Plus de 307 800 $', rate: '1,5%', color: 'from-purple-500 to-violet-600' },
     ]
   },
 
   // City statistics
   statistics: {
-    title: 'Montréal en chiffres',
-    subtitle: 'La métropole la plus dynamique du Québec',
+    title: 'Candiac en chiffres',
+    subtitle: 'Une ville jeune et dynamique de la Rive-Sud',
     stats: [
-      { icon: Users, value: '4,3M', label: 'habitants en région métropolitaine' },
-      { icon: TrendingUp, value: '+4,2%', label: 'croissance démographique annuelle' },
-      { icon: Building2, value: '19', label: 'arrondissements distincts' },
-      { icon: Home, value: '925K$', label: 'prix moyen maison unifamiliale' },
+      { icon: Users, value: '25 000+', label: 'résidents (fondée en 1957)' },
+      { icon: TrendingUp, value: '38 ans', label: 'âge moyen (ville très jeune)' },
+      { icon: Building2, value: '15 km', label: 'du centre-ville de Montréal' },
+      { icon: Home, value: '450-650K$', label: 'fourchette unifamiliale typique' },
     ]
   },
 
   // Neighborhoods
   neighborhoods: {
-    title: 'Les quartiers de Montréal',
-    subtitle: 'Découvrez les arrondissements les plus prisés pour votre investissement immobilier',
+    title: 'Les secteurs de Candiac',
+    subtitle: 'De l\'historique Vieux-Candiac aux développements modernes de Symphonie',
     items: [
       {
-        name: 'Le Plateau-Mont-Royal',
-        description: 'Quartier artistique et bohème avec ses escaliers extérieurs emblématiques et sa vie culturelle dynamique.',
-        icon: '🎨',
-      },
-      {
-        name: 'Ville-Marie',
-        description: 'Centre névralgique avec le Vieux-Montréal, le centre-ville et le Quartier des spectacles.',
-        icon: '🏙️',
-      },
-      {
-        name: 'Rosemont–La Petite-Patrie',
-        description: 'Ambiance familiale avec le marché Jean-Talon et des prix plus accessibles.',
-        icon: '👨‍👩‍👧‍👦',
-      },
-      {
-        name: 'Outremont',
-        description: 'Élégance et raffinement avec ses maisons bourgeoises et ses rues arborées.',
+        name: 'Vieux-Candiac',
+        description: 'Cœur historique des années 1960-70 avec arbres centenaires. Bungalows et plain-pied sur généreux terrains. Proximité parc Haendel.',
         icon: '🌳',
       },
       {
-        name: 'Le Sud-Ouest',
-        description: 'Secteur en transformation avec le canal de Lachine et des prix attractifs.',
-        icon: '🚢',
+        name: 'Quartier Montcalm',
+        description: 'Expansion des années 1980-90. Maisons contemporaines familiales avec sous-sols aménagés et garages doubles. Proximité écoles primaires et secondaires.',
+        icon: '🏘️',
       },
       {
-        name: 'Ahuntsic-Cartierville',
-        description: 'Tranquillité et espaces verts en bordure de la rivière des Prairies.',
-        icon: '🌊',
+        name: 'Jardins de Candiac',
+        description: 'Développement début 2000 avec urbanisme moderne. Larges boulevards, pistes cyclables intégrées et nombreux parcs. Normes énergétiques récentes.',
+        icon: '🚴',
+      },
+      {
+        name: 'Quartier Symphonie',
+        description: 'Développement le plus récent avec résidences neuves. Rues nommées d\'après compositeurs. Mix unifamiliales, jumelés et maisons de ville.',
+        icon: '🎵',
+      },
+      {
+        name: 'Secteur du Bassin',
+        description: 'Adjacent au bassin de rétention avec sentiers pédestres. Cours arrière sur espaces verts et zones boisées. Ambiance champêtre en milieu urbain.',
+        icon: '🌲',
+      },
+      {
+        name: 'Quartier DIX30 (proximité)',
+        description: 'Accès immédiat à l\'un des plus grands pôles commerciaux à ciel ouvert du Québec. Restaurants, boutiques et divertissements.',
+        icon: '🛍️',
       },
     ]
   },
 
-  // Benefits section
+  // Benefits section - RÉÉCRIT POUR CANDIAC
   benefits: {
-    title: 'Pourquoi choisir un courtier hypothécaire indépendant ?',
-    subtitle: 'Maximisez vos économies et optimisez votre financement',
+    title: 'Les avantages d\'un courtier hypothécaire pour votre achat à Candiac',
+    subtitle: 'Simplifiez votre financement sur la Rive-Sud',
     items: [
       {
-        title: 'Accès à 20+ prêteurs',
-        description: 'Comparaison exhaustive des offres de toutes les institutions financières pour trouver le meilleur taux.',
+        title: 'Réseau étendu d\'institutions partenaires',
+        description: 'Accédez à plus de 20 prêteurs incluant les institutions nationales et régionales bien implantées sur la Rive-Sud pour comparer les offres adaptées au marché de Candiac.',
         icon: <Building2 className="w-8 h-8" />,
       },
       {
-        title: 'Économies substantielles',
-        description: "Chaque 0,1% économisé sur votre taux représente des milliers de dollars sur la durée du prêt.",
+        title: 'Maximisation de votre budget',
+        description: "Pour une propriété de 550 000$ à Candiac, chaque 0,1% de taux en moins représente environ 8 250$ d'économies sur 25 ans. Nous négocions pour vous.",
         icon: <DollarSign className="w-8 h-8" />,
       },
       {
-        title: 'Service gratuit',
-        description: 'Le courtier est rémunéré par la banque, ses services ne vous coûtent rien.',
+        title: 'Services professionnels inclus',
+        description: 'Votre courtier est compensé par l\'institution prêteuse. Vous bénéficiez d\'un accompagnement expert sans frais directs.',
         icon: <CheckCircle className="w-8 h-8" />,
       },
       {
-        title: 'Expertise fiscale',
-        description: 'Stratégies avancées comme la manœuvre Smith ou le MAPA pour optimiser votre situation.',
+        title: 'Optimisation fiscale intelligente',
+        description: 'Stratégies comme la manœuvre Smith pour transformer votre dette hypothécaire en déductions fiscales, particulièrement avantageux pour les propriétaires candiagiens.',
         icon: <TrendingUp className="w-8 h-8" />,
       },
       {
-        title: 'Dossiers complexes',
-        description: 'Solutions pour travailleurs autonomes, nouveaux arrivants et situations de crédit particulières.',
+        title: 'Expertise pour situations variées',
+        description: 'Travailleurs autonomes, jeunes professionnels de la Rive-Sud, nouveaux arrivants : nous trouvons le financement adapté à votre profil spécifique.',
         icon: <Users className="w-8 h-8" />,
       },
       {
-        title: 'Accompagnement complet',
-        description: 'Support personnalisé du début à la fin, incluant la négociation et le suivi de votre dossier.',
+        title: 'Accompagnement de A à Z',
+        description: 'De l\'analyse initiale jusqu\'à la signature finale, coordination complète de votre dossier avec les institutions et votre notaire.',
         icon: <ArrowRight className="w-8 h-8" />,
       },
     ]
   },
 
-  // Programs section
+  // Programs section - RÉÉCRIT POUR CANDIAC
   programs: {
-    title: "Programmes d'aide disponibles",
-    subtitle: "Réduisez ou éliminez votre taxe de bienvenue grâce aux programmes municipaux",
+    title: "Aide à l'acquisition et exemptions",
+    subtitle: "Programmes disponibles pour alléger vos coûts d'achat à Candiac",
     items: [
       {
-        title: "Programme d'accession à la propriété",
+        title: "Exemptions et réductions légales",
         description: [
-          "Remboursement jusqu'à 100% pour les familles",
-          "Pour les premiers acheteurs",
-          "Économies de plusieurs milliers de dollars"
+          "Transferts entre conjoints mariés ou unis civilement",
+          "Transferts par succession à certains héritiers directs",
+          "Transferts à fiducie personnelle selon critères",
+          "Réorganisations corporatives admissibles"
         ]
       },
       {
-        title: "Exemptions légales",
+        title: "Crédits gouvernementaux",
         description: [
-          "Transferts entre conjoints",
-          "Transferts parents-enfants (conditions applicables)",
-          "Legs par testament"
+          "Crédit d'impôt première habitation (provincial et fédéral)",
+          "Amortissement 30 ans pour premiers acheteurs (depuis déc. 2024)",
+          "Remboursement TPS/TVQ pour constructions neuves",
+          "RAP : utilisation REER pour mise de fonds (max 60K$ par personne)"
         ]
       }
     ]
@@ -217,63 +213,73 @@ const CITY_CONTENT = {
 
   // What is Welcome Tax section
   whatIsWelcomeTax: {
-    title: "Qu'est-ce que la taxe de bienvenue à Montréal ?",
+    title: "Qu'est-ce que la taxe de bienvenue à Candiac ?",
     content: [
-      "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, représente un impôt municipal que tout acheteur d'une propriété doit acquitter lors du transfert de propriété à Montréal. Cette contribution financière tire son appellation du nom de Jean Bienvenue, ancien ministre des Affaires municipales du Québec qui a instauré cette mesure en 1976.",
-      "Cette taxe s'applique à l'acquisition de tout type de propriété résidentielle ou commerciale, qu'il s'agisse d'une maison unifamiliale, d'un condominium, d'un duplex, d'un triplex ou d'un immeuble à revenus. Le montant à payer varie considérablement selon la valeur de la transaction et représente souvent une somme substantielle que les acheteurs doivent prévoir dans leur budget d'acquisition."
+      "La taxe de bienvenue est un droit municipal perçu par la Ville de Candiac lors du transfert de propriété d'un immeuble. Ce droit s'applique à toute transaction immobilière et varie selon la valeur marchande de la propriété achetée. À Candiac, comme dans toutes les municipalités du Québec, le calcul de cette taxe suit les taux prescrits par la Loi concernant les droits sur les mutations immobilières.",
+      "Le montant de la taxe de bienvenue se calcule par tranches progressives appliquées sur le prix de vente ou la valeur marchande de la propriété, selon le montant le plus élevé. Cette taxe représente une dépense significative que tout acheteur doit anticiper lors de l'acquisition d'une propriété résidentielle ou commerciale à Candiac, qu'il s'agisse d'une maison unifamiliale, d'un condominium ou d'une propriété à revenus."
     ]
   },
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Candiac en 2025 ?',
     sections: [
       {
-        title: 'Base d\'imposition',
-        content: "Le calcul des droits de mutation s'effectue sur la base d'imposition, qui correspond au montant le plus élevé parmi :",
+        title: 'Détermination de la base imposable',
+        content: "Le calcul s'applique sur le montant le plus élevé entre :",
         items: [
-          "Le prix de vente inscrit dans l'acte notarié (excluant TPS et TVQ)",
-          "La contrepartie stipulée pour le transfert",
-          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif"
+          "Prix de vente notarié (excluant TPS et TVQ)",
+          "Contrepartie stipulée dans le contrat de vente",
+          "Valeur au rôle d'évaluation × facteur comparatif municipal"
+        ]
+      },
+      {
+        title: 'Structure des taux à Candiac',
+        content: "Application des taux provinciaux standards :",
+        items: [
+          "Tranche 1 (0-61 500$) : 0,5%",
+          "Tranche 2 (61 500-307 800$) : 1,0%",
+          "Tranche 3 (307 800$+) : 1,5%"
         ]
       }
     ],
     example: {
-      title: 'Exemple de calcul détaillé',
-      propertyValue: '700 000 $',
+      title: 'Calcul type pour Candiac',
+      propertyValue: '550 000 $ (fourchette typique)',
       calculation: [
-        { range: '0 $ à 58 900 $ × 0,5%', amount: '294,50 $' },
-        { range: '58 900 $ à 294 600 $ × 1,0%', amount: '2 357,00 $' },
-        { range: '294 600 $ à 500 000 $ × 1,5%', amount: '3 081,00 $' },
-        { range: '500 000 $ à 700 000 $ × 2,0%', amount: '4 000,00 $' }
+        { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
+        { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
+        { range: '307 800 $ à 550 000 $ × 1,5%', amount: '3 633,00 $' }
       ],
-      total: '9 732,50 $'
+      total: '6 403,50 $'
     },
     paymentInfo: {
-      title: 'Modalités de paiement',
-      content: "La Ville de Montréal expédie la facture environ 30 jours suivant l'inscription de l'acte de vente. Le paiement doit s'effectuer en un seul versement. Les contribuables peuvent régler par virement bancaire, chèque ou aux comptoirs de services de la Ville."
+      title: 'Règlement de la facture',
+      content: "La Ville de Candiac expédie la facture environ 30 jours après l'inscription de l'acte de vente. Paiement requis dans les 30 jours suivant réception. Modes acceptés : virement bancaire en ligne, chèque postal (Ville de Candiac – Taxes, CP...) ou dépôt direct à l'hôtel de ville. Pénalités et intérêts en cas de retard."
     }
   },
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier de Candiac : dynamisme de la Rive-Sud',
     sections: [
       {
-        title: 'Évolution des prix',
-        content: "Le marché immobilier montréalais a connu une croissance soutenue. Entre 1999 et 2024, la valeur moyenne des résidences unifamiliales a presque sextuplé, passant de 155 446 $ à 925 599 $, la plus forte augmentation de toutes les régions du Québec.",
+        title: 'Valeurs et typologies',
+        content: "Le marché immobilier de Candiac demeure vigoureux et attractif. La valeur médiane des propriétés unifamiliales se situe généralement entre 450 000$ et 650 000$, selon le secteur, la grandeur et l'âge de la construction. Les condominiums et maisons de ville offrent un point d'entrée entre 300 000$ et 450 000$.",
         stats: [
-          { year: '1999', value: '155 446 $' },
-          { year: '2024', value: '925 599 $' }
+          { label: 'Unifamiliales Vieux-Candiac', value: '450-550K$' },
+          { label: 'Unifamiliales Symphonie (neuf)', value: '600-650K$' },
+          { label: 'Condos et maisons de ville', value: '300-450K$' },
+          { label: 'Distance Montréal', value: '15 km' }
         ]
       },
       {
-        title: 'Facteurs influençant le marché',
+        title: 'Facteurs d\'attractivité candiagiens',
         items: [
-          { icon: Users, text: "Immigration internationale : Alimente continuellement la demande en logements" },
-          { icon: TrendingUp, text: "Taux d'intérêt : Influencent directement la capacité d'emprunt" },
-          { icon: Building2, text: "Infrastructures : REM et prolongements de métro stimulent le développement" },
-          { icon: Home, text: "Pénurie de logements : Exerce une pression à la hausse sur les prix" }
+          { icon: Users, text: "Population jeune : âge moyen de 38 ans, l'une des municipalités les plus jeunes de la Montérégie" },
+          { icon: TrendingUp, text: "Croissance soutenue depuis 1957 : plus de 25 000 résidents, familles et jeunes professionnels" },
+          { icon: Building2, text: "Situation stratégique : 15 km de Montréal, accès pont Champlain et autoroute 15" },
+          { icon: Home, text: "Gare train de banlieue : connexion directe centre-ville Montréal en moins de 30 minutes" }
         ]
       }
     ]
@@ -281,89 +287,104 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "L'avenir de Montréal : perspectives d'investissement",
+    title: "Pourquoi investir à Candiac en 2025",
     items: [
       {
         icon: Building2,
-        title: 'Développements infrastructurels',
-        description: 'Le Réseau express métropolitain améliore la desserte des quartiers périphériques. Les projets de revitalisation dans l\'est de Montréal et le long du fleuve créent de nouvelles opportunités d\'investissement.'
+        title: 'Ville planifiée et moderne',
+        description: 'Fondée en 1957 avec développement urbain harmonieux. Quartiers distincts du Vieux-Candiac historique au moderne Symphonie. Urbanisme axé sur qualité de vie avec 85+ hectares d\'espaces verts.'
       },
       {
         icon: Users,
-        title: 'Tendances démographiques',
-        description: 'La croissance soutenue alimentée par l\'immigration garantit une demande continue. Montréal attire des travailleurs qualifiés en technologie, IA et aérospatiale.'
+        title: 'Démographie favorable',
+        description: 'Population jeune (38 ans moyenne) et dynamique. Forte attractivité auprès jeunes familles et professionnels. Écoles publiques réputées : Mosaïque, Grand-Héron, Paul-VI, Secondaire Grand-Coteau.'
       },
       {
         icon: Home,
-        title: 'Marché locatif dynamique',
-        description: 'Taux d\'inoccupation faible et demande soutenue près des campus, du centre-ville et dans les quartiers bien desservis par le transport en commun.'
+        title: 'Accessibilité et transport',
+        description: 'Gare terminus ligne Candiac Exo : 14 départs/jour vers Montréal, trajet <30 min. Stationnement incitatif 1 000+ places. Autoroute 15 et route 132 pour automobile. Pistes cyclables intégrées.'
       },
       {
         icon: TrendingUp,
-        title: 'Propriétés multifamiliales',
-        description: 'Les duplex et triplex permettent de générer des revenus locatifs tout en habitant la propriété. Stratégie populaire pour réduire le coût d\'habitation.'
+        title: 'Infrastructures et services',
+        description: 'Centre Alain-Larose (bibliothèque, activités). Aquadôme (piscine olympique). Proximité Quartier DIX30 (commerce majeur). Plusieurs CPE et garderies. Taxation compétitive avec services de qualité.'
       }
     ]
   },
 
-  // Broker Comparison section
+  // Broker Comparison section - RÉÉCRIT POUR CANDIAC
   brokerComparison: {
-    title: 'Courtier vs Démarcheur hypothécaire',
-    subtitle: 'Comprendre la différence peut vous faire économiser des dizaines de milliers de dollars',
+    title: 'Courtier indépendant vs Conseiller bancaire',
+    subtitle: 'Pour votre achat à Candiac, le choix du professionnel hypothécaire est déterminant',
     independentBroker: {
       title: 'Courtier hypothécaire indépendant',
       items: [
-        'Travaille pour vous, le client',
-        'Accès à 20+ prêteurs (banques, caisses, prêteurs privés)',
-        'Compare des dizaines d\'offres pour trouver la meilleure',
-        'Négocie en votre nom pour obtenir les meilleures conditions',
-        'Services gratuits (rémunéré par la banque)',
-        'Stratégies fiscales (manœuvre Smith, MAPA)',
-        'Dossiers complexes (autonomes, nouveaux arrivants, crédit imparfait)'
+        'Travaille exclusivement dans VOTRE intérêt',
+        'Analyse 20+ institutions pour trouver la meilleure offre',
+        'Négocie taux et conditions pour maximiser vos avantages',
+        'Connaissance du marché Rive-Sud et particularités Candiac',
+        'Solutions créatives pour profils variés (autonomes, immigrants)',
+        'Stratégies fiscales avancées (Smith, MAPA, etc.)',
+        'Gratuit pour vous (compensation par le prêteur)'
       ]
     },
     bankAgent: {
-      title: 'Démarcheur hypothécaire',
+      title: 'Conseiller d\'une seule banque',
       items: [
-        'Travaille pour une seule banque',
-        'Accès limité aux produits de son employeur',
-        'Aucune comparaison avec d\'autres institutions',
-        'Politiques rigides de l\'institution',
-        'Taux non négociables selon la grille tarifaire',
-        'Options limitées pour dossiers complexes',
-        'Peut refuser les dossiers non standard'
+        'Employé d\'une institution spécifique',
+        'Limité aux produits de son employeur uniquement',
+        'Grille de taux fixe sans flexibilité de négociation',
+        'Critères d\'approbation standardisés et rigides',
+        'Aucune comparaison avec marché concurrent',
+        'Peut refuser dossiers atypiques ou complexes',
+        'Perspective limitée aux politiques internes'
       ]
     },
     financialImpact: {
-      title: 'Impact financier',
-      content: 'Dans un marché où les prix ont considérablement augmenté, chaque 0,1% économisé sur votre taux peut représenter des dizaines de milliers de dollars sur la durée de votre prêt hypothécaire. Un courtier indépendant peut faire toute la différence.'
+      title: 'L\'impact financier concret',
+      content: 'Sur une propriété de 550 000$ typique à Candiac, obtenir un taux 0,20% inférieur représente environ 16 500$ d\'économies sur un prêt de 25 ans. Un courtier indépendant maximise vos chances d\'obtenir les conditions optimales disponibles sur le marché.'
     }
   },
 
-  // Practical Tips section
+  // Practical Tips section - RÉÉCRIT POUR CANDIAC
   practicalTips: {
-    title: 'Conseils pratiques pour les acheteurs',
+    title: 'Guide pratique pour acheter à Candiac',
     tips: [
       {
         icon: Calculator,
-        title: 'Prévoir la taxe dans votre budget',
-        content: "Il est impératif d'incluer la taxe de bienvenue dans vos prévisions financières. Cette dépense obligatoire s'ajoute à la mise de fonds, aux frais de notaire, aux frais d'inspection et aux autres coûts associés à l'achat.",
-        note: "De nombreux primo-accédants sont surpris par l'ampleur de cette dépense. Utilisez notre calculateur pour éviter les mauvaises surprises."
+        title: 'Anticiper l\'ensemble des frais',
+        content: "Prévoyez tous les coûts au-delà du prix d'achat : taxe de bienvenue (~6 404$ pour 550K$), frais de notaire (1 500-2 500$), inspection préachat (500-800$), évaluation (300-500$), ajustements taxes municipales/scolaires, déménagement.",
+        note: "Notre calculateur vous donne une estimation précise de la taxe selon le prix envisagé. Point d'entrée condos/maisons de ville : 300-450K$ (taxe ~3 100-4 800$)."
       },
       {
         icon: TrendingUp,
-        title: 'Optimiser votre stratégie d\'achat',
-        content: "Selon votre situation familiale et financière, vous pourriez être admissible à différents programmes d'aide qui réduiront substantiellement le coût de la taxe de bienvenue.",
+        title: 'Identifier le secteur qui vous convient',
+        content: "Candiac offre des quartiers distincts pour différents besoins. Vieux-Candiac : terrains généreux, arbres matures, cachet. Montcalm : familles, proximité écoles. Jardins de Candiac : moderne, pistes cyclables. Symphonie : neuf, normes récentes.",
         items: [
-          "Renseignez-vous sur les programmes municipaux",
-          "Travaillez avec un courtier hypothécaire indépendant",
-          "Consultez un notaire compétent"
+          "Train de banlieue : départs fréquents vers Montréal (<30 min)",
+          "Quartier DIX30 : à proximité immédiate (commerce, restaurants)",
+          "85+ hectares d'espaces verts : parcs, terrains sportifs, sentiers"
         ]
       },
       {
         icon: DollarSign,
-        title: 'Comprendre la structure progressive',
-        content: "La structure progressive signifie que plus votre propriété est dispendieuse, plus le taux marginal augmente. Une propriété à 495 000 $ sera taxée différemment qu'une à 505 000 $ en raison du passage au taux de 2% pour la portion excédant 500 000 $."
+        title: 'Optimiser votre pouvoir d\'achat',
+        content: "Travaillez avec un courtier hypothécaire indépendant pour maximiser votre capacité d'emprunt et obtenir les meilleures conditions. Explorez l'amortissement 30 ans pour premiers acheteurs (disponible depuis déc. 2024).",
+        items: [
+          "Préautorisation avant recherche : démontre sérieux aux vendeurs",
+          "Considérer condos/maisons de ville si budget plus serré",
+          "Explorer crédits d'impôt première habitation (provincial et fédéral)"
+        ]
+      },
+      {
+        icon: Home,
+        title: 'Miser sur la qualité de vie',
+        content: "Candiac se distingue par son développement harmonieux depuis 1957. Population jeune (38 ans moyenne), excellentes écoles publiques, sécurité élevée, services municipaux de qualité (Aquadôme, Centre Alain-Larose).",
+        items: [
+          "Visiter les différents secteurs pour ressentir leurs ambiances",
+          "Consulter courtier immobilier connaissant bien Candiac",
+          "Évaluer temps de trajet vers lieu de travail (train vs auto)"
+        ]
       }
     ]
   },
@@ -371,31 +392,35 @@ const CITY_CONTENT = {
   // FAQ section
   faq: {
     title: 'Questions fréquentes',
-    subtitle: "Tout ce que vous devez savoir sur la taxe de bienvenue",
+    subtitle: "Réponses sur la taxe de bienvenue à Candiac",
     items: [
       {
-        q: "Qu'est-ce que la taxe de bienvenue ?",
-        a: "La taxe de bienvenue, officiellement appelée droit de mutation immobilière, est un impôt municipal que tout acheteur doit payer lors du transfert de propriété à Montréal. Elle a été instaurée en 1976."
+        q: "Combien coûte la taxe de bienvenue à Candiac ?",
+        a: "Pour une propriété de 550 000$ (fourchette typique à Candiac), la taxe s'élève à environ 6 404$. Pour un condo à 400 000$, elle est d'environ 4 383$. Le montant varie selon la valeur de votre acquisition et se calcule par tranches progressives."
       },
       {
-        q: 'Quand dois-je payer la taxe de bienvenue ?',
-        a: "La Ville de Montréal envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Le paiement doit se faire en un seul versement."
+        q: 'Quand dois-je payer cette taxe ?',
+        a: "La Ville de Candiac envoie la facture environ 30 jours après l'inscription de l'acte de vente au registre foncier. Vous devez payer dans les 30 jours suivant la réception. Modes acceptés : virement bancaire, chèque ou dépôt à l'hôtel de ville."
       },
       {
-        q: "Comment est calculée la base d'imposition ?",
-        a: "La base d'imposition correspond au montant le plus élevé entre le prix de vente (sans TPS/TVQ), la contrepartie stipulée, ou la valeur marchande selon le rôle d'évaluation."
+        q: 'Puis-je être exempté de la taxe ?',
+        a: "Oui, certaines situations donnent droit à exemptions : transferts entre conjoints mariés/unis civilement, transferts par décès à certains héritiers, transferts à fiducie personnelle. Consultez votre notaire pour vérifier votre admissibilité."
       },
       {
-        q: 'Puis-je être exempté de la taxe de bienvenue ?',
-        a: "Oui, plusieurs situations permettent une exemption : transferts entre conjoints, entre parents-enfants (conditions applicables), legs par testament, et programmes d'aide pour premiers acheteurs avec famille."
+        q: 'Quels sont les avantages de vivre à Candiac ?',
+        a: "Population jeune (38 ans), gare train de banlieue (14 départs/jour, <30 min vers Montréal), proximité Quartier DIX30, excellentes écoles publiques, 85+ hectares d'espaces verts, taxation compétitive, développement urbain harmonieux depuis 1957."
+      },
+      {
+        q: 'Quel secteur de Candiac choisir ?',
+        a: "Vieux-Candiac : terrains généreux, arbres matures. Montcalm : familles, proximité écoles (années 80-90). Jardins de Candiac : moderne, pistes cyclables (début 2000). Symphonie : résidences neuves, dernières normes. Secteur du Bassin : nature, sentiers pédestres."
       }
     ]
   },
 
   // Final CTA section
   finalCta: {
-    title: 'Prêt à économiser sur votre achat immobilier ?',
-    subtitle: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider à optimiser votre financement',
+    title: 'Concrétisez votre projet immobilier à Candiac',
+    subtitle: 'Nos experts de la Rive-Sud vous accompagnent pour obtenir le meilleur financement et réaliser votre rêve de propriété dans cette ville dynamique',
     buttons: [
       { text: 'Appelez-nous maintenant', icon: Phone },
       { text: 'Demander une soumission', icon: Mail }
@@ -404,7 +429,7 @@ const CITY_CONTENT = {
 
   // Footer
   footer: {
-    about: "Experts en financement hypothécaire à Montréal, nous vous accompagnons dans tous vos projets immobiliers avec professionnalisme et transparence.",
+    about: "Spécialistes du financement hypothécaire sur la Rive-Sud, nous connaissons Candiac et ses quartiers pour vous guider vers la meilleure solution de financement.",
     links: [
       { text: 'Calculateur de prêt', href: '#' },
       { text: 'Taux hypothécaires', href: '#' },
@@ -412,15 +437,14 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
+      phone: '(450) 123-4567',
       email: 'info@votresite.com',
-      address: 'Montréal, Québec'
+      address: 'Candiac, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2025 Calculateur Taxe de Bienvenue Candiac. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
-
 // ======================
 // MAIN COMPONENT
 // ======================
@@ -1405,14 +1429,14 @@ export default function MontrealWelcomeTaxPage() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-white font-bold text-lg mb-4">À propos</h3>
               <p className="text-sm leading-relaxed">
                 {CITY_CONTENT.footer.about}
               </p>
             </div>
-            
+           
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Contact</h3>
               <ul className="space-y-3 text-sm">
