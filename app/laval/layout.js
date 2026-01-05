@@ -5,13 +5,13 @@ const inter = Inter({ subsets: ['latin'] });
 
 // --- SEO METADATA ---
 export const metadata = {
-  title: 'Calculateur Taxe de Bienvenue Laval 2025 | Droits de Mutation',
-  description: 'Estimez vos droits de mutation immobilière à Laval en 2025. Calculez vos frais pour Chomedey, Vimont ou Sainte-Rose et découvrez les options de paiement en 2 versements.',
+  title: 'Calculateur Taxe de Bienvenue Laval 2026 | Droits de Mutation',
+  description: 'Estimez vos droits de mutation immobilière à Laval en 2026. Calculez vos frais pour Chomedey, Vimont ou Sainte-Rose et découvrez les options de paiement en 2 versements.',
   keywords: [
-    'taxe de bienvenue laval 2025',
+    'taxe de bienvenue laval 2026',
     'calculateur droits de mutation laval',
     'taxe de bienvenue chomedey',
-    'immobilier laval 2025',
+    'immobilier laval 2026',
     'prix médian maison laval',
     'courtier hypothécaire laval',
     'paiement taxe de bienvenue laval',
@@ -21,7 +21,7 @@ export const metadata = {
     canonical: 'https://taxedebienvenue.ca/laval',
   },
   openGraph: {
-    title: 'Calculateur Taxe de Bienvenue Laval 2025',
+    title: 'Calculateur Taxe de Bienvenue Laval 2026',
     description: 'Calculez instantanément vos droits de mutation pour votre achat immobilier à Laval.',
     url: 'https://taxedebienvenue.ca/laval',
     siteName: 'Taxe de Bienvenue Canada',
@@ -38,7 +38,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Taxe de Bienvenue Laval 2025 - Estimation Rapide',
+    title: 'Taxe de Bienvenue Laval 2026 - Estimation Rapide',
     description: 'Outil gratuit pour calculer vos droits de mutation à Laval.',
     images: ['https://imgs.search.brave.com/9ZqY8YH0xQJ5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dG91cmlzbWVsYXZh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDUvY2Vu/dHJlLXZpbGxlLWxh/dmFsLmpwZw'],
   },
@@ -64,7 +64,7 @@ export default function LavalLayout({ children }) {
         "name": "Calculateur Taxe de Bienvenue Laval",
         "operatingSystem": "All",
         "applicationCategory": "FinanceApplication",
-        "description": "Calculateur gratuit des droits de mutation pour les 14 quartiers de Laval selon les taux 2025.",
+        "description": "Calculateur gratuit des droits de mutation pour les 14 quartiers de Laval selon les taux 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -79,7 +79,7 @@ export default function LavalLayout({ children }) {
             "name": "Quel est le montant de la taxe de bienvenue pour une maison de 600 000$ à Laval ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pour une propriété de 600 000$ à Laval en 2025, la taxe de bienvenue est de 7 153,50$."
+              "text": "Pour une propriété de 600 000$ à Laval en 2026, la taxe de bienvenue est de 7 153,50$."
             }
           },
           {

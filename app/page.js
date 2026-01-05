@@ -220,18 +220,18 @@ export default function GlobalHomePage() {
     <div className="min-h-screen bg-slate-50">
       {/* 1. HERO & CALCULATOR */}
       <div className="relative z-20 border-b border-white/10 bg-slate-900/50 backdrop-blur-sm">
-                <div className="max-w-7xl mx-auto px-4 bg-white py-3 sm:px-6 lg:px-8">
+                <div className="w-full mx-auto px-4 bg-white py-3 sm:px-6 lg:px-8">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-slate-400" />
-                      <span className="text-sm text-slate-400">Calculateur disponible pour :</span>
+                      <span className="text-sm text-slate-800">Calculateur disponible pour :</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {CITY_CONTENT.availableCities.map((city, idx) => (
                         <a
                           key={idx}
                           href={city.path}
-                          className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors `}
+                          className={`px-3 py-1.5 rounded-full border-2 border-slate-800 text-sm font-medium transition-colors `}
                         >
                           {city.name}
                         </a>
@@ -245,11 +245,11 @@ export default function GlobalHomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
-              Calculateur de Taxe de Bienvenue Québec 2025
+              Calculateur de Taxe de Bienvenue Québec 2026
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
               Estimez précisément vos droits de mutation pour toutes les municipalités du Québec. 
-              Données officielles mises à jour pour 2025.
+              Données officielles mises à jour pour 2026.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full border text-blue-400 border-blue-900/50 bg-blue-900/20 backdrop-blur-sm">
@@ -330,7 +330,7 @@ export default function GlobalHomePage() {
                     <h3 className="text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-4">Résultat estimé</h3>
                     <div className="inline-block px-6 py-10 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 w-full">
                       <p className="text-5xl font-black text-white mb-2">{new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD' }).format(tax)}</p>
-                      <p className="text-blue-400 font-semibold">{selectedCity.name} • 2025</p>
+                      <p className="text-blue-400 font-semibold">{selectedCity.name} • 2026</p>
                     </div>
                   </div>
                   {breakdown.length > 0 && (
@@ -399,7 +399,7 @@ export default function GlobalHomePage() {
                     <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors"><Calculator className="w-5 h-5" /></div>
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-1">Taxe de bienvenue {city.name}</h3>
-                  <p className="text-sm text-slate-500 mb-4">Données immobilières 2025</p>
+                  <p className="text-sm text-slate-500 mb-4">Données immobilières 2026</p>
                   <div className="flex items-center text-blue-600 text-sm font-bold">Calculateur {city.name} <ArrowRight className="ml-2 w-4 h-4" /></div>
                 </motion.div>
               </Link>
@@ -440,18 +440,29 @@ export default function GlobalHomePage() {
           <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">Optimisez votre financement immobilier.</h2>
           <p className="text-xl text-blue-100 mb-12">Nos experts comparent 20+ prêteurs pour compenser le coût de votre taxe de bienvenue.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-10 py-5 bg-white text-blue-600 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all flex items-center justify-center gap-3 shadow-xl">
-              <Phone className="w-5 h-5" /> Parler à un courtier
-            </button>
-            <button className="px-10 py-5 bg-blue-700 text-white border border-blue-500 rounded-2xl font-bold text-lg hover:bg-blue-800 transition-all flex items-center justify-center gap-3 shadow-xl">
-              <Mail className="w-5 h-5" /> Soumission en ligne
-            </button>
+<Link
+  href="https://wa.me/15144473000"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-10 py-5 bg-white text-blue-600 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all flex items-center justify-center gap-3 shadow-xl"
+>
+  <Phone className="w-5 h-5" />
+  Parler à un courtier
+</Link>
+
+<Link
+  href="mailto:equipe@hypotheques.ca"
+  className="px-10 py-5 bg-blue-700 text-white border border-blue-500 rounded-2xl font-bold text-lg hover:bg-blue-800 transition-all flex items-center justify-center gap-3 shadow-xl"
+>
+  <Mail className="w-5 h-5" />
+  Soumission en ligne
+</Link>
           </div>
         </div>
       </section>
 
       <footer className="py-10 bg-slate-900 text-slate-500 text-center text-xs border-t border-white/5">
-        <p>© 2025 TaxeDeBienvenue.ca — Estimation indicative. Consultez un professionnel.</p>
+        <p>© 2026 TaxeDeBienvenue.ca — Estimation indicative. Consultez un professionnel.</p>
       </footer>
     </div>
   );

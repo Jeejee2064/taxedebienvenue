@@ -5,13 +5,13 @@ const inter = Inter({ subsets: ['latin'] });
 
 // --- SEO METADATA ---
 export const metadata = {
-  title: 'Calculateur Taxe de Bienvenue Chambly 2025 | Droits de Mutation',
-  description: 'Calculez vos droits de mutation immobilière à Chambly en 2025. Estimez vos frais pour le Vieux-Chambly ou le Quartier du Bassin et découvrez les conseils de nos experts.',
+  title: 'Calculateur Taxe de Bienvenue Chambly 2026 | Droits de Mutation',
+  description: 'Calculez vos droits de mutation immobilière à Chambly en 2026. Estimez vos frais pour le Vieux-Chambly ou le Quartier du Bassin et découvrez les conseils de nos experts.',
   keywords: [
-    'taxe de bienvenue chambly 2025',
+    'taxe de bienvenue chambly 2026',
     'calculateur droits de mutation chambly',
     'immobilier chambly montérégie',
-    'prix maison chambly 2025',
+    'prix maison chambly 2026',
     'vieux-chambly achat maison',
     'courtier hypothécaire chambly',
     'taxe de bienvenue montérégie'
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: 'https://taxedebienvenue.ca/chambly',
   },
   openGraph: {
-    title: 'Calculateur Taxe de Bienvenue Chambly 2025',
+    title: 'Calculateur Taxe de Bienvenue Chambly 2026',
     description: 'Outil gratuit pour estimer vos droits de mutation à Chambly. Planifiez votre achat immobilier en Montérégie avec précision.',
     url: 'https://taxedebienvenue.ca/chambly',
     siteName: 'Taxe de Bienvenue Canada',
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Taxe de Bienvenue Chambly 2025 - Estimez vos frais',
+    title: 'Taxe de Bienvenue Chambly 2026 - Estimez vos frais',
     description: 'Calculez instantanément vos droits de mutation pour votre future maison à Chambly.',
     images: ['https://imgs.search.brave.com/xQZGY5yzqKLQH8KqLMH0vQJ9dYZJH0qGKWH8YqLQH8K/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLXMv/MWEvN2UvMmQvMmQv/Zm9ydC1jaGFtYmx5/LmpwZw'],
   },
@@ -63,7 +63,7 @@ export default function ChamblyLayout({ children }) {
         "name": "Calculateur Taxe de Bienvenue Chambly",
         "operatingSystem": "All",
         "applicationCategory": "FinanceApplication",
-        "description": "Logiciel gratuit de calcul des droits de mutation pour la ville de Chambly selon les taux standards de 2025.",
+        "description": "Logiciel gratuit de calcul des droits de mutation pour la ville de Chambly selon les taux standards de 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -83,7 +83,7 @@ export default function ChamblyLayout({ children }) {
           },
           {
             "@type": "Question",
-            "name": "Quels sont les taux de la taxe de bienvenue à Chambly en 2025 ?",
+            "name": "Quels sont les taux de la taxe de bienvenue à Chambly en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Chambly utilise les taux provinciaux standards : 0,5% jusqu'à 61 500 $, 1,0% jusqu'à 307 800 $, et 1,5% pour l'excédent."

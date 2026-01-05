@@ -5,22 +5,22 @@ const inter = Inter({ subsets: ['latin'] });
 
 // --- SEO METADATA ---
 export const metadata = {
-  title: 'Calculateur Taxe de Bienvenue Montréal 2025 | Droits de Mutation',
-  description: 'Estimez gratuitement vos droits de mutation immobilière (taxe de bienvenue) à Montréal en 2025. Calculez vos frais selon les nouveaux taux et découvrez les programmes d\'exonération.',
+  title: 'Calculateur Taxe de Bienvenue Montréal 2026 | Droits de Mutation',
+  description: 'Estimez gratuitement vos droits de mutation immobilière (taxe de bienvenue) à Montréal en 2026. Calculez vos frais selon les nouveaux taux et découvrez les programmes d\'exonération.',
   keywords: [
-    'taxe de bienvenue montreal 2025',
+    'taxe de bienvenue montreal 2026',
     'calculateur taxe de bienvenue',
     'droits de mutation montreal',
     'achat immobilier montreal',
     'courtier hypothécaire montréal',
-    'prix maison montreal 2025',
+    'prix maison montreal 2026',
     'taxe de bienvenue québec calculation'
   ],
   alternates: {
     canonical: 'https://taxedebienvenue.ca/montreal',
   },
   openGraph: {
-    title: 'Calculateur Taxe de Bienvenue Montréal 2025',
+    title: 'Calculateur Taxe de Bienvenue Montréal 2026',
     description: 'Calculez instantanément vos droits de mutation pour votre futur achat immobilier à Montréal.',
     url: 'https://taxedebienvenue.ca/montreal',
     siteName: 'Taxe de Bienvenue Canada',
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Calculateur Taxe de Bienvenue Montréal 2025',
+    title: 'Calculateur Taxe de Bienvenue Montréal 2026',
     description: 'Estimez vos frais de mutation immobilière à Montréal en quelques secondes.',
     images: ['https://a.travel-assets.com/findyours-php/viewfinder/images/res70/494000/494753-montreal.jpg'],
   },
@@ -70,7 +70,7 @@ export default function MontrealLayout({ children }) {
         "name": "Calculateur de Taxe de Bienvenue Montréal",
         "operatingSystem": "All",
         "applicationCategory": "FinanceApplication",
-        "description": "Outil gratuit pour calculer les droits de mutation immobilière à Montréal selon les taux de 2025.",
+        "description": "Outil gratuit pour calculer les droits de mutation immobilière à Montréal selon les taux de 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",

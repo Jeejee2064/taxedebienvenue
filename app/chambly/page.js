@@ -16,6 +16,7 @@ import {
   Mail,
   ChevronDown,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // ======================
 // CITY CONTENT CONFIGURATION
@@ -25,7 +26,7 @@ const CITY_CONTENT = {
   city: {
     name: 'Chambly',
     displayName: 'Chambly',
-    year: '2025',
+    year: '2026',
     heroImage: 'https://imgs.search.brave.com/xQZGY5yzqKLQH8KqLMH0vQJ9dYZJH0qGKWH8YqLQH8K/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLXMv/MWEvN2UvMmQvMmQv/Zm9ydC1jaGFtYmx5/LmpwZw',
   },
 
@@ -42,10 +43,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Chambly en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Chambly en 2026',
     features: [
       'Calcul instantané',
-      'Taux 2025',
+      'Taux 2026',
       '100% gratuit'
     ]
   },
@@ -53,7 +54,7 @@ const CITY_CONTENT = {
   // Calculator section
   calculator: {
     title: 'Calculateur',
-    subtitle: 'Taxe de bienvenue 2025',
+    subtitle: 'Taxe de bienvenue 2026',
     inputLabel: "Prix d'achat de la propriété",
     inputPlaceholder: '547 089',
     buttonText: 'Calculer maintenant',
@@ -61,12 +62,12 @@ const CITY_CONTENT = {
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Chambly • 2025',
+    resultLocation: 'Chambly • 2026',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Chambly - provincial standard rates)
+  // Tax brackets (2026 rates for Chambly - provincial standard rates)
   taxBrackets: [
     { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
     { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
@@ -88,7 +89,7 @@ const CITY_CONTENT = {
 
   // Tax brackets display
   bracketsDisplay: {
-    title: 'Grille des taux 2025',
+    title: 'Grille des taux 2026',
     subtitle: 'Structure progressive des droits de mutation immobilière à Chambly',
     brackets: [
       { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
@@ -102,7 +103,7 @@ const CITY_CONTENT = {
     title: 'Chambly en chiffres',
     subtitle: 'Une perle de la Montérégie',
     stats: [
-      { icon: Users, value: '31 938', label: 'habitants (2025)' },
+      { icon: Users, value: '31 938', label: 'habitants (2026)' },
       { icon: TrendingUp, value: '+8%', label: 'croissance 2016-2021' },
       { icon: Building2, value: '8', label: 'districts électoraux' },
       { icon: Home, value: '547K$', label: 'prix moyen maison unifamiliale' },
@@ -220,7 +221,7 @@ const CITY_CONTENT = {
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Chambly en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Chambly en 2026 ?',
     sections: [
       {
         title: 'Base d\'imposition',
@@ -259,7 +260,7 @@ const CITY_CONTENT = {
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier de Chambly : tendances 2025',
+    title: 'Marché immobilier de Chambly : tendances 2026',
     sections: [
       {
         title: 'Un marché attractif et stable',
@@ -435,11 +436,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(450) 123-4567',
-      email: 'info@votresite.com',
+      phone: '+1 514 447-3000',
+      email: 'equipe@hypotheques.ca',
       address: 'Chambly, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Chambly. Tous droits réservés.',
+    copyright: '© 2026 Calculateur Taxe de Bienvenue Chambly. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
@@ -781,8 +782,8 @@ export default function MontrealWelcomeTaxPage() {
         </div>
       </section>
 
-      {/* CTA Form Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+ {/* CTA Form Section */}
+  {/* <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -838,7 +839,7 @@ export default function MontrealWelcomeTaxPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Tax Brackets Section */}
       <section className="py-16 bg-white">
@@ -1406,21 +1407,35 @@ export default function MontrealWelcomeTaxPage() {
               {CITY_CONTENT.finalCta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
-                const Icon = button.icon;
-                return (
-                  <motion.button
-                    key={idx}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${idx === 0 ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600'} px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    {button.text}
-                  </motion.button>
-                );
-              })}
-            </div>
+  {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
+    const Icon = button.icon;
+
+    const href =
+      idx === 0
+        ? "https://wa.me/15144473000"
+        : "mailto:equipe@hypotheques.ca";
+
+    const target = idx === 0 ? "_blank" : undefined;
+
+    return (
+      <Link
+        key={idx}
+        href={href}
+        target={target}
+        rel={idx === 0 ? "noopener noreferrer" : undefined}
+ 
+        className={`${
+          idx === 0
+            ? "bg-white text-slate-900 hover:bg-slate-100"
+            : "bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600"
+        } px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
+      >
+        <Icon className="w-5 h-5" />
+        {button.text}
+      </Link>
+    );
+  })}
+</div>
           </motion.div>
         </div>
       </section>

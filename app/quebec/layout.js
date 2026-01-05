@@ -5,13 +5,13 @@ const inter = Inter({ subsets: ['latin'] });
 
 // --- SEO METADATA ---
 export const metadata = {
-  title: 'Calculateur Taxe de Bienvenue Québec 2025 | Droits de Mutation',
-  description: 'Calculez vos droits de mutation à Québec en 2025. Profitez de notre outil gratuit, découvrez les taux par tranche et les modalités de paiement en 3 versements.',
+  title: 'Calculateur Taxe de Bienvenue Québec 2026 | Droits de Mutation',
+  description: 'Calculez vos droits de mutation à Québec en 2026. Profitez de notre outil gratuit, découvrez les taux par tranche et les modalités de paiement en 3 versements.',
   keywords: [
-    'taxe de bienvenue québec 2025',
+    'taxe de bienvenue québec 2026',
     'calculateur droits de mutation québec',
     'taxe de bienvenue ville de québec',
-    'prix immobilier québec 2025',
+    'prix immobilier québec 2026',
     'courtier hypothécaire québec',
     'paiement taxe de bienvenue trois versements',
     'achat maison québec'
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: 'https://taxedebienvenue.ca/quebec',
   },
   openGraph: {
-    title: 'Calculateur Taxe de Bienvenue Québec 2025',
+    title: 'Calculateur Taxe de Bienvenue Québec 2026',
     description: 'Estimez précisément vos droits de mutation immobilière dans la Capitale-Nationale.',
     url: 'https://taxedebienvenue.ca/quebec',
     siteName: 'Taxe de Bienvenue Canada',
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Taxe de Bienvenue Québec 2025 - Calculateur Gratuit',
+    title: 'Taxe de Bienvenue Québec 2026 - Calculateur Gratuit',
     description: 'Calculez vos frais de mutation à Québec et découvrez les programmes d\'aide.',
     images: ['https://imgs.search.brave.com/fxK8_YPZHqQJN3dqKLPfxuD9vXEJKV9xGgQKLMQH_Yc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTMx/ODYzODM3L3Bob3Rv/L2NoYXRlYXUtZnJv/bnRlbmFjLWFuZC1v/bGQtcXVlYmVjLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1G/WW0zVzBRWDU3LTk1/TzY4OVFIc2JxR0Rw/ZHRhbGp0SmdsUW1K/TDNnQWRnPQ'],
   },
@@ -63,7 +63,7 @@ export default function QuebecLayout({ children }) {
         "name": "Calculateur Taxe de Bienvenue Québec",
         "operatingSystem": "All",
         "applicationCategory": "FinanceApplication",
-        "description": "Logiciel de calcul des droits de mutation pour la ville de Québec selon les barèmes 2025.",
+        "description": "Logiciel de calcul des droits de mutation pour la ville de Québec selon les barèmes 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -83,7 +83,7 @@ export default function QuebecLayout({ children }) {
           },
           {
             "@type": "Question",
-            "name": "Quels sont les taux de la taxe de bienvenue à Québec en 2025 ?",
+            "name": "Quels sont les taux de la taxe de bienvenue à Québec en 2026 ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Québec applique les taux de 0,5% (jusqu'à 61 500 $), 1,0% (61 500 $ à 307 800 $) et 1,5% pour la portion excédant 307 800 $."

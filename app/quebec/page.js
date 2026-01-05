@@ -16,6 +16,7 @@ import {
   Mail,
   ChevronDown,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // ======================
 // CITY CONTENT CONFIGURATION
@@ -25,7 +26,7 @@ const CITY_CONTENT = {
   city: {
     name: 'Québec',
     displayName: 'Québec',
-    year: '2025',
+    year: '2026',
     heroImage: 'https://imgs.search.brave.com/fxK8_YPZHqQJN3dqKLPfxuD9vXEJKV9xGgQKLMQH_Yc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTMx/ODYzODM3L3Bob3Rv/L2NoYXRlYXUtZnJv/bnRlbmFjLWFuZC1v/bGQtcXVlYmVjLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1G/WW0zVzBRWDU3LTk1/TzY4OVFIc2JxR0Rw/ZHRhbGp0SmdsUW1K/TDNnQWRnPQ',
   },
 
@@ -42,10 +43,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Québec en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Québec en 2026',
     features: [
       'Calcul instantané',
-      'Taux 2025',
+      'Taux 2026',
       '100% gratuit'
     ]
   },
@@ -53,7 +54,7 @@ const CITY_CONTENT = {
   // Calculator section
   calculator: {
     title: 'Calculateur',
-    subtitle: 'Taxe de bienvenue 2025',
+    subtitle: 'Taxe de bienvenue 2026',
     inputLabel: "Prix d'achat de la propriété",
     inputPlaceholder: '500 000',
     buttonText: 'Calculer maintenant',
@@ -61,12 +62,12 @@ const CITY_CONTENT = {
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Québec • 2025',
+    resultLocation: 'Québec • 2026',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Quebec City - provincial standard rates)
+  // Tax brackets (2026 rates for Quebec City - provincial standard rates)
   taxBrackets: [
     { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
     { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
@@ -88,7 +89,7 @@ const CITY_CONTENT = {
 
   // Tax brackets display
   bracketsDisplay: {
-    title: 'Grille des taux 2025',
+    title: 'Grille des taux 2026',
     subtitle: 'Structure progressive des droits de mutation immobilière à Québec',
     brackets: [
       { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
@@ -220,7 +221,7 @@ const CITY_CONTENT = {
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Québec en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Québec en 2026 ?',
     sections: [
       {
         title: 'Base d\'imposition',
@@ -228,7 +229,7 @@ const CITY_CONTENT = {
         items: [
           "Le prix de vente inscrit dans l'acte notarié (excluant TPS et TVQ)",
           "La contrepartie stipulée pour le transfert",
-          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif (1,00 en 2025)"
+          "La valeur marchande selon le rôle d'évaluation foncière multiplié par le facteur comparatif (1,00 en 2026)"
         ]
       },
       {
@@ -259,13 +260,13 @@ const CITY_CONTENT = {
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier de Québec : tendances 2025',
+    title: 'Marché immobilier de Québec : tendances 2026',
     sections: [
       {
         title: 'Reprise vigoureuse du marché',
-        content: "Le marché immobilier de Québec a connu une reprise remarquable en 2024 et début 2025. Au premier trimestre de 2025, le prix moyen d'une maison unifamiliale s'établit à 495 836 $, en hausse de 13% par rapport à l'année précédente. Cette augmentation s'explique par les baisses successives du taux directeur de la Banque du Canada et l'amélioration de la confiance des consommateurs.",
+        content: "Le marché immobilier de Québec a connu une reprise remarquable en 2024 et début 2026. Au premier trimestre de 2026, le prix moyen d'une maison unifamiliale s'établit à 495 836 $, en hausse de 13% par rapport à l'année précédente. Cette augmentation s'explique par les baisses successives du taux directeur de la Banque du Canada et l'amélioration de la confiance des consommateurs.",
         stats: [
-          { label: 'Prix moyen unifamiliale Q1 2025', value: '495 836 $' },
+          { label: 'Prix moyen unifamiliale Q1 2026', value: '495 836 $' },
           { label: 'Hausse annuelle', value: '+13%' },
           { label: 'Délai de vente moyen', value: '49 jours' },
           { label: 'Prix moyen copropriété', value: '345 752 $' }
@@ -277,7 +278,7 @@ const CITY_CONTENT = {
           { icon: Users, text: "Immigration internationale : 22 200 nouveaux résidents en 2024, représentant 89% de la croissance" },
           { icon: TrendingUp, text: "Taux d'intérêt en baisse : Stimulent la demande et améliorent le pouvoir d'achat" },
           { icon: Building2, text: "Pénurie d'inventaire : Baisse de 24% pour les unifamiliales et 39% pour les copros" },
-          { icon: Home, text: "Prévisions 2025 : Royal LePage anticipe une hausse de 11% des prix" }
+          { icon: Home, text: "Prévisions 2026 : Royal LePage anticipe une hausse de 11% des prix" }
         ]
       }
     ]
@@ -372,7 +373,7 @@ const CITY_CONTENT = {
       {
         icon: Home,
         title: 'Agir rapidement sur le marché',
-        content: "Avec un délai de vente moyen de seulement 49 jours et des situations de surenchère fréquentes, une préautorisation hypothécaire est essentielle. Les ventes ont bondi de 36% en janvier 2025 versus 2024.",
+        content: "Avec un délai de vente moyen de seulement 49 jours et des situations de surenchère fréquentes, une préautorisation hypothécaire est essentielle. Les ventes ont bondi de 36% en janvier 2026 versus 2024.",
         items: [
           "Obtenir une préautorisation avant de chercher",
           "Travailler avec un courtier hypothécaire indépendant",
@@ -396,7 +397,7 @@ const CITY_CONTENT = {
         a: "Oui ! La Ville de Québec offre une option unique : le paiement en trois versements égaux sans intérêts, avec des échéances à 30, 90 et 150 jours. Si le montant est inférieur à 300 $, le paiement doit se faire en un seul versement."
       },
       {
-        q: 'Quels sont les taux applicables en 2025 ?',
+        q: 'Quels sont les taux applicables en 2026 ?',
         a: "Québec applique les taux provinciaux standards : 0,5% sur la première tranche (0-61 500 $), 1,0% sur la deuxième tranche (61 500-307 800 $), et 1,5% au-delà de 307 800 $. Ces taux sont plus avantageux que ceux de Montréal pour les propriétés haut de gamme."
       },
       {
@@ -405,7 +406,7 @@ const CITY_CONTENT = {
       },
       {
         q: 'Le marché de Québec est-il favorable aux acheteurs ?',
-        a: "Le marché favorise actuellement les vendeurs avec des prix en hausse de 13% et des délais de vente courts (49 jours). Les ventes ont bondi de 36% en janvier 2025. Une préautorisation hypothécaire et un courtier indépendant sont essentiels pour réussir votre achat."
+        a: "Le marché favorise actuellement les vendeurs avec des prix en hausse de 13% et des délais de vente courts (49 jours). Les ventes ont bondi de 36% en janvier 2026. Une préautorisation hypothécaire et un courtier indépendant sont essentiels pour réussir votre achat."
       }
     ]
   },
@@ -430,11 +431,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(418) 123-4567',
-      email: 'info@votresite.com',
+      phone: '+1 514 447-3000',
+      email: 'equipe@hypotheques.ca',
       address: 'Québec, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Québec. Tous droits réservés.',
+    copyright: '© 2026 Calculateur Taxe de Bienvenue Québec. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
@@ -776,8 +777,8 @@ export default function MontrealWelcomeTaxPage() {
         </div>
       </section>
 
-      {/* CTA Form Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+ {/* CTA Form Section */}
+  {/* <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -833,7 +834,7 @@ export default function MontrealWelcomeTaxPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Tax Brackets Section */}
       <section className="py-16 bg-white">
@@ -1401,21 +1402,35 @@ export default function MontrealWelcomeTaxPage() {
               {CITY_CONTENT.finalCta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
-                const Icon = button.icon;
-                return (
-                  <motion.button
-                    key={idx}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${idx === 0 ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600'} px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    {button.text}
-                  </motion.button>
-                );
-              })}
-            </div>
+  {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
+    const Icon = button.icon;
+
+    const href =
+      idx === 0
+        ? "https://wa.me/15144473000"
+        : "mailto:equipe@hypotheques.ca";
+
+    const target = idx === 0 ? "_blank" : undefined;
+
+    return (
+      <Link
+        key={idx}
+        href={href}
+        target={target}
+        rel={idx === 0 ? "noopener noreferrer" : undefined}
+ 
+        className={`${
+          idx === 0
+            ? "bg-white text-slate-900 hover:bg-slate-100"
+            : "bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600"
+        } px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
+      >
+        <Icon className="w-5 h-5" />
+        {button.text}
+      </Link>
+    );
+  })}
+</div>
           </motion.div>
         </div>
       </section>

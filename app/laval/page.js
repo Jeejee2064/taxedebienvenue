@@ -16,6 +16,7 @@ import {
   Mail,
   ChevronDown,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // ======================
 // CITY CONTENT CONFIGURATION
@@ -25,7 +26,7 @@ const CITY_CONTENT = {
   city: {
     name: 'Laval',
     displayName: 'Laval',
-    year: '2025',
+    year: '2026',
     heroImage: 'https://imgs.search.brave.com/9ZqY8YH0xQJ5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H5H/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dG91cmlzbWVsYXZh/bC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDUvY2Vu/dHJlLXZpbGxlLWxh/dmFsLmpwZw',
   },
 
@@ -42,10 +43,10 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Laval en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Laval en 2026',
     features: [
       'Calcul instantané',
-      'Taux 2025',
+      'Taux 2026',
       '100% gratuit'
     ]
   },
@@ -53,7 +54,7 @@ const CITY_CONTENT = {
   // Calculator section
   calculator: {
     title: 'Calculateur',
-    subtitle: 'Taxe de bienvenue 2025',
+    subtitle: 'Taxe de bienvenue 2026',
     inputLabel: "Prix d'achat de la propriété",
     inputPlaceholder: '600 000',
     buttonText: 'Calculer maintenant',
@@ -61,12 +62,12 @@ const CITY_CONTENT = {
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Laval • 2025',
+    resultLocation: 'Laval • 2026',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Laval - provincial standard rates)
+  // Tax brackets (2026 rates for Laval - provincial standard rates)
   taxBrackets: [
     { max: 61500, rate: 0.5, name: '0 $ à 61 500 $' },
     { max: 307800, rate: 1.0, name: '61 500 $ à 307 800 $' },
@@ -88,7 +89,7 @@ const CITY_CONTENT = {
 
   // Tax brackets display
   bracketsDisplay: {
-    title: 'Grille des taux 2025',
+    title: 'Grille des taux 2026',
     subtitle: 'Tranches d\'imposition des droits de mutation à Laval',
     brackets: [
       { range: '0 $ à 61 500 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
@@ -105,7 +106,7 @@ const CITY_CONTENT = {
       { icon: Users, value: '460K', label: 'habitants (3e ville du Québec)' },
       { icon: TrendingUp, value: '+17%', label: 'ventes unifamiliales en 2024' },
       { icon: Building2, value: '14', label: 'quartiers distincts' },
-      { icon: Home, value: '600K$', label: 'prix médian unifamiliale (avril 2025)' },
+      { icon: Home, value: '600K$', label: 'prix médian unifamiliale (avril 2026)' },
     ]
   },
 
@@ -220,7 +221,7 @@ const CITY_CONTENT = {
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Laval en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Laval en 2026 ?',
     sections: [
       {
         title: 'Base d\'imposition à Laval',
@@ -228,7 +229,7 @@ const CITY_CONTENT = {
         items: [
           "Le prix de vente inscrit dans l'acte notarié (sans TPS/TVQ)",
           "La contrepartie stipulée pour le transfert",
-          "La valeur selon le rôle d'évaluation × facteur comparatif (1,002 pour Laval en 2025)"
+          "La valeur selon le rôle d'évaluation × facteur comparatif (1,002 pour Laval en 2026)"
         ]
       },
       {
@@ -243,7 +244,7 @@ const CITY_CONTENT = {
     ],
     example: {
       title: 'Exemple pour une propriété médiane lavalloise',
-      propertyValue: '600 000 $ (prix médian avril 2025)',
+      propertyValue: '600 000 $ (prix médian avril 2026)',
       calculation: [
         { range: '0 $ à 61 500 $ × 0,5%', amount: '307,50 $' },
         { range: '61 500 $ à 307 800 $ × 1,0%', amount: '2 463,00 $' },
@@ -259,13 +260,13 @@ const CITY_CONTENT = {
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier lavallois : boom de 2025',
+    title: 'Marché immobilier lavallois : boom de 2026',
     sections: [
       {
         title: 'Reprise spectaculaire du marché',
-        content: "Le marché lavallois connaît une vigueur remarquable en 2024-2025. Les ventes de maisons unifamiliales ont bondi de 17% en 2024, avec 2 571 transactions au 30 novembre 2025 (+12% vs 2024). Cette reprise s'explique par les 9 baisses consécutives du taux directeur (de 5% en mai 2024 à 2,25% en oct. 2025).",
+        content: "Le marché lavallois connaît une vigueur remarquable en 2024-2026. Les ventes de maisons unifamiliales ont bondi de 17% en 2024, avec 2 571 transactions au 30 novembre 2026 (+12% vs 2024). Cette reprise s'explique par les 9 baisses consécutives du taux directeur (de 5% en mai 2024 à 2,25% en oct. 2026).",
         stats: [
-          { label: 'Prix médian unifamiliale (avril 2025)', value: '600 000 $' },
+          { label: 'Prix médian unifamiliale (avril 2026)', value: '600 000 $' },
           { label: 'Hausse annuelle', value: '+3%' },
           { label: 'Prix médian condo', value: '410 000 $' },
           { label: 'Délai de vente moyen', value: '42 jours' }
@@ -276,8 +277,8 @@ const CITY_CONTENT = {
         items: [
           { icon: Users, text: "460 396 habitants : 3e ville du Québec, 2e pour proportion d'immigrants" },
           { icon: TrendingUp, text: "Appréciation spectaculaire : valeur moyenne passée de 108 607$ (1999) à 627 295$ (2024)" },
-          { icon: Building2, text: "Rareté de l'offre : 1 409 inscriptions fin nov. 2025, niveau identique à 2024" },
-          { icon: Home, text: "Marché vendeurs : ratio ventes/inscriptions de 81% en avril 2025" }
+          { icon: Building2, text: "Rareté de l'offre : 1 409 inscriptions fin nov. 2026, niveau identique à 2024" },
+          { icon: Home, text: "Marché vendeurs : ratio ventes/inscriptions de 81% en avril 2026" }
         ]
       }
     ]
@@ -285,7 +286,7 @@ const CITY_CONTENT = {
 
   // Investment Perspective section
   investmentPerspective: {
-    title: "Investir à Laval : perspectives 2025",
+    title: "Investir à Laval : perspectives 2026",
     items: [
       {
         icon: Building2,
@@ -295,7 +296,7 @@ const CITY_CONTENT = {
       {
         icon: Users,
         title: 'Croissance démographique soutenue',
-        description: 'Population de 460K en 2025, +112 200 personnes depuis 1998. Immigration internationale moteur principal. Projections +4,6% d\'ici 2026. Âge moyen jeune, forte présence familiale.'
+        description: 'Population de 460K en 2026, +112 200 personnes depuis 1998. Immigration internationale moteur principal. Projections +4,6% d\'ici 2026. Âge moyen jeune, forte présence familiale.'
       },
       {
         icon: Home,
@@ -305,7 +306,7 @@ const CITY_CONTENT = {
       {
         icon: TrendingUp,
         title: 'Marché locatif et plex dynamiques',
-        description: 'Ventes de plex +17% en 2025 (292 transactions). Forte demande locative près du métro et dans Chomedey. Triplex à partir de 575K$ offrent revenus stables.'
+        description: 'Ventes de plex +17% en 2026 (292 transactions). Forte demande locative près du métro et dans Chomedey. Triplex à partir de 575K$ offrent revenus stables.'
       }
     ]
   },
@@ -340,7 +341,7 @@ const CITY_CONTENT = {
     },
     financialImpact: {
       title: 'L\'impact sur votre portefeuille',
-      content: 'Avec un prix médian de 600 000 $ à Laval (avril 2025), la différence entre un bon taux et le meilleur taux disponible peut représenter entre 15 000 $ et 40 000 $ sur la durée de votre prêt. Un courtier multi-prêteurs maximise vos chances d\'obtenir les meilleures conditions du marché.'
+      content: 'Avec un prix médian de 600 000 $ à Laval (avril 2026), la différence entre un bon taux et le meilleur taux disponible peut représenter entre 15 000 $ et 40 000 $ sur la durée de votre prêt. Un courtier multi-prêteurs maximise vos chances d\'obtenir les meilleures conditions du marché.'
     }
   },
 
@@ -377,7 +378,7 @@ const CITY_CONTENT = {
       {
         icon: Home,
         title: 'Considérer les plex pour investissement',
-        content: "Les ventes de plex ont explosé de 17% en 2025 (292 transactions). Triplex disponibles à partir de 575K$ dans Pont-Viau et Laval-des-Rapides. Forte demande locative grâce à la population multiculturelle et aux étudiants.",
+        content: "Les ventes de plex ont explosé de 17% en 2026 (292 transactions). Triplex disponibles à partir de 575K$ dans Pont-Viau et Laval-des-Rapides. Forte demande locative grâce à la population multiculturelle et aux étudiants.",
         items: [
           "Générer des revenus tout en occupant votre propriété",
           "Marché locatif dynamique (2e place au Québec pour proportion d'immigrants)",
@@ -394,7 +395,7 @@ const CITY_CONTENT = {
     items: [
       {
         q: "Quelle est la taxe de bienvenue pour une maison à 600 000$ à Laval ?",
-        a: "Pour une propriété au prix médian lavallois de 600 000$ (avril 2025), la taxe de bienvenue s'élève à 7 153,50$. Ce montant se calcule par tranches : 307,50$ (première tranche), 2 463$ (deuxième tranche) et 4 383$ (troisième tranche)."
+        a: "Pour une propriété au prix médian lavallois de 600 000$ (avril 2026), la taxe de bienvenue s'élève à 7 153,50$. Ce montant se calcule par tranches : 307,50$ (première tranche), 2 463$ (deuxième tranche) et 4 383$ (troisième tranche)."
       },
       {
         q: 'Puis-je payer la taxe en plusieurs versements à Laval ?',
@@ -409,7 +410,7 @@ const CITY_CONTENT = {
         a: "Chomedey (94 000 hab.) : jeunes professionnels, vie urbaine, multiculturel. Vimont : familles, centre géographique, train de banlieue. Sainte-Rose : charme patrimonial, Vieux village 1740. Fabreville : tranquillité, familles. Laval-sur-le-Lac : prestige, haut de gamme."
       },
       {
-        q: 'Le marché de Laval est-il favorable aux acheteurs en 2025 ?',
+        q: 'Le marché de Laval est-il favorable aux acheteurs en 2026 ?',
         a: "Le marché favorise actuellement les vendeurs avec un ratio ventes/inscriptions de 81% et 1 409 inscriptions stables. Toutefois, les ventes ont bondi de 17% (unifamiliales) grâce aux baisses de taux. Les acheteurs bien préparés avec préautorisation trouvent des opportunités."
       }
     ]
@@ -435,11 +436,11 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(450) 678-9012',
-      email: 'info@votresite.com',
+      phone: '+1 514 447-3000',
+      email: 'equipe@hypotheques.ca',
       address: 'Laval, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Laval. Tous droits réservés.',
+    copyright: '© 2026 Calculateur Taxe de Bienvenue Laval. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
@@ -781,8 +782,8 @@ export default function MontrealWelcomeTaxPage() {
         </div>
       </section>
 
-      {/* CTA Form Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+ {/* CTA Form Section */}
+  {/* <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -838,7 +839,7 @@ export default function MontrealWelcomeTaxPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Tax Brackets Section */}
       <section className="py-16 bg-white">
@@ -1406,21 +1407,35 @@ export default function MontrealWelcomeTaxPage() {
               {CITY_CONTENT.finalCta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
-                const Icon = button.icon;
-                return (
-                  <motion.button
-                    key={idx}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${idx === 0 ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600'} px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    {button.text}
-                  </motion.button>
-                );
-              })}
-            </div>
+  {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
+    const Icon = button.icon;
+
+    const href =
+      idx === 0
+        ? "https://wa.me/15144473000"
+        : "mailto:equipe@hypotheques.ca";
+
+    const target = idx === 0 ? "_blank" : undefined;
+
+    return (
+      <Link
+        key={idx}
+        href={href}
+        target={target}
+        rel={idx === 0 ? "noopener noreferrer" : undefined}
+ 
+        className={`${
+          idx === 0
+            ? "bg-white text-slate-900 hover:bg-slate-100"
+            : "bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600"
+        } px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
+      >
+        <Icon className="w-5 h-5" />
+        {button.text}
+      </Link>
+    );
+  })}
+</div>
           </motion.div>
         </div>
       </section>

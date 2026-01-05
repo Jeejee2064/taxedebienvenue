@@ -16,6 +16,7 @@ import {
   Mail,
   ChevronDown,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // ======================
 // CITY CONTENT CONFIGURATION
@@ -25,7 +26,7 @@ const CITY_CONTENT = {
   city: {
     name: 'Montréal',
     displayName: 'Montréal',
-    year: '2025',
+    year: '2026',
     heroImage: 'https://imgs.search.brave.com/1_fkxhVywnz9r-MJaRJjFDopwrLp6ie-fD6LmSNIzmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hLnRy/YXZlbC1hc3NldHMu/Y29tL2ZpbmR5b3Vy/cy1waHAvdmlld2Zp/bmRlci9pbWFnZXMv/cmVzNzAvNDk0MDAw/LzQ5NDc1My1tb250/cmVhbC5qcGc_aW1w/b2xpY3k9ZmNyb3Am/dz0xMDQwJmg9NTgw/JnE9bWVkaXVtSGln/aA',
   },
 
@@ -42,7 +43,7 @@ const CITY_CONTENT = {
   // Hero section
   hero: {
     title: 'Calculateur de Taxe de Bienvenue',
-    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2025',
+    subtitle: 'Estimez précisément vos droits de mutation immobilière à Montréal en 2026',
     features: [
       'Calcul instantané',
       'Taux 2026',
@@ -53,7 +54,7 @@ const CITY_CONTENT = {
   // Calculator section
   calculator: {
     title: 'Calculateur',
-    subtitle: 'Taxe de bienvenue 2025',
+    subtitle: 'Taxe de bienvenue 2026',
     inputLabel: "Prix d'achat de la propriété",
     inputPlaceholder: '500 000',
     buttonText: 'Calculer maintenant',
@@ -61,12 +62,12 @@ const CITY_CONTENT = {
     resultTitle: 'Résultat',
     resultSubtitle: 'Estimation instantanée',
     resultLabel: 'Taxe totale',
-    resultLocation: 'Montréal • 2025',
+    resultLocation: 'Montréal • 2026',
     emptyStateText: "Entrez un montant et cliquez\nsur calculer pour voir le résultat",
     breakdownTitle: 'Détails par tranche'
   },
 
-  // Tax brackets (2025 rates for Montreal)
+  // Tax brackets (2026 rates for Montreal)
   taxBrackets: [
     { max: 58900, rate: 0.5, name: '0 $ à 58 900 $' },
     { max: 294600, rate: 1.0, name: '58 900 $ à 294 600 $' },
@@ -91,7 +92,7 @@ const CITY_CONTENT = {
 
   // Tax brackets display
   bracketsDisplay: {
-    title: 'Grille des taux 2025',
+    title: 'Grille des taux 2026',
     subtitle: 'Structure progressive des droits de mutation immobilière à Montréal',
     brackets: [
       { range: '0 $ à 58 900 $', rate: '0,5%', color: 'from-green-500 to-emerald-600' },
@@ -226,7 +227,7 @@ const CITY_CONTENT = {
 
   // How to Calculate section
   howToCalculate: {
-    title: 'Comment calculer la taxe de bienvenue à Montréal en 2025 ?',
+    title: 'Comment calculer la taxe de bienvenue à Montréal en 2026 ?',
     sections: [
       {
         title: 'Base d\'imposition',
@@ -257,7 +258,7 @@ const CITY_CONTENT = {
 
   // Market Trends section
   marketTrends: {
-    title: 'Marché immobilier montréalais : tendances 2025',
+    title: 'Marché immobilier montréalais : tendances 2026',
     sections: [
       {
         title: 'Évolution des prix',
@@ -412,18 +413,15 @@ const CITY_CONTENT = {
       { text: 'Blog immobilier', href: '#' }
     ],
     contact: {
-      phone: '(514) 123-4567',
-      email: 'info@votresite.com',
+      phone: '+1 514 447-3000',
+      email: 'equipe@hypotheques.ca',
       address: 'Montréal, Québec'
     },
-    copyright: '© 2025 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
+    copyright: '© 2026 Calculateur Taxe de Bienvenue Montréal. Tous droits réservés.',
     disclaimer: 'Les informations fournies sont à titre indicatif. Consultez toujours un professionnel pour votre situation spécifique.'
   }
 };
 
-// ======================
-// MAIN COMPONENT
-// ======================
 
 export default function MontrealWelcomeTaxPage() {
   const [price, setPrice] = useState('');
@@ -758,8 +756,8 @@ export default function MontrealWelcomeTaxPage() {
         </div>
       </section>
 
-      {/* CTA Form Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+      
+      {/* <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -815,7 +813,7 @@ export default function MontrealWelcomeTaxPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Tax Brackets Section */}
       <section className="py-16 bg-white">
@@ -1383,21 +1381,35 @@ export default function MontrealWelcomeTaxPage() {
               {CITY_CONTENT.finalCta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
-                const Icon = button.icon;
-                return (
-                  <motion.button
-                    key={idx}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${idx === 0 ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600'} px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    {button.text}
-                  </motion.button>
-                );
-              })}
-            </div>
+  {CITY_CONTENT.finalCta.buttons.map((button, idx) => {
+    const Icon = button.icon;
+
+    const href =
+      idx === 0
+        ? "https://wa.me/15144473000"
+        : "mailto:equipe@hypotheques.ca";
+
+    const target = idx === 0 ? "_blank" : undefined;
+
+    return (
+      <Link
+        key={idx}
+        href={href}
+        target={target}
+        rel={idx === 0 ? "noopener noreferrer" : undefined}
+ 
+        className={`${
+          idx === 0
+            ? "bg-white text-slate-900 hover:bg-slate-100"
+            : "bg-slate-700 text-white hover:bg-slate-600 border-2 border-slate-600"
+        } px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl`}
+      >
+        <Icon className="w-5 h-5" />
+        {button.text}
+      </Link>
+    );
+  })}
+</div>
           </motion.div>
         </div>
       </section>
