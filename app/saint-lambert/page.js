@@ -782,64 +782,79 @@ export default function MontrealWelcomeTaxPage() {
         </div>
       </section>
 
- {/* CTA Form Section */}
-  {/* <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {CITY_CONTENT.ctaForm.title}
-            </h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              {CITY_CONTENT.ctaForm.subtitle}
+      {/* CTA Form Section */}
+<section className="bg-gradient-to-br from-slate-900 to-slate-800 py-20">
+  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    
+    {/* HEADER */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mb-14 text-center"
+    >
+      <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+        {CITY_CONTENT.ctaForm.title}
+      </h2>
+      <p className="mx-auto max-w-3xl text-lg text-slate-300 md:text-xl">
+        {CITY_CONTENT.ctaForm.subtitle}
+      </p>
+    </motion.div>
+
+    {/* CARD */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="rounded-3xl bg-white p-5 shadow-2xl md:p-10"
+    >
+      {/* FORM */}
+        <iframe
+          title="Achat futur"
+          aria-label="Achat futur"
+          src="https://forms.zohopublic.ca/hypothequesca1/form/Achatfutur/formperma/xrnwQ82JU7effpcL7lo8ShLkRkESAvzGNmBWLB_hpNM"
+          className="w-full rounded-xl h-[85vh] md:h-[75vh] lg:h-[70vh]"
+          style={{ border: "none" }}
+        />
+
+      {/* BENEFITS */}
+      <div className="mt-12 grid gap-8 md:grid-cols-3">
+        {CITY_CONTENT.ctaForm.benefits.map((benefit, idx) => (
+          <div key={idx} className="text-center">
+            <div
+              className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full ${
+                idx === 0
+                  ? "bg-green-100"
+                  : idx === 1
+                  ? "bg-blue-100"
+                  : "bg-purple-100"
+              }`}
+            >
+              <CheckCircle
+                className={`h-6 w-6 ${
+                  idx === 0
+                    ? "text-green-600"
+                    : idx === 1
+                    ? "text-blue-600"
+                    : "text-purple-600"
+                }`}
+              />
+            </div>
+            <h4 className="mb-1 font-semibold text-slate-900">
+              {benefit.title}
+            </h4>
+            <p className="text-sm text-slate-600">
+              {benefit.description}
             </p>
-          </motion.div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl shadow-2xl p-8 md:p-12"
-          >
-            <div className="border-4 border-dashed border-slate-300 rounded-xl p-12 text-center">
-              <div className="max-w-md mx-auto">
-                <Mail className="w-16 h-16 text-slate-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">{CITY_CONTENT.ctaForm.formTitle}</h3>
-                <p className="text-slate-600 mb-4">
-                  {CITY_CONTENT.ctaForm.formDescription}
-                </p>
-                <code className="text-sm text-slate-500 bg-slate-100 px-4 py-2 rounded inline-block">
-                  &lt;zoho-form-embed&gt;&lt;/zoho-form-embed&gt;
-                </code>
-              </div>
-            </div>
-
-            <div className="mt-8 grid md:grid-cols-3 gap-6">
-              {CITY_CONTENT.ctaForm.benefits.map((benefit, idx) => (
-                <div key={idx} className="text-center">
-                  <div className={`${
-                    idx === 0 ? 'bg-green-100' : 
-                    idx === 1 ? 'bg-blue-100' : 'bg-purple-100'
-                  } rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3`}>
-                    <CheckCircle className={`w-6 h-6 ${
-                      idx === 0 ? 'text-green-600' : 
-                      idx === 1 ? 'text-blue-600' : 'text-purple-600'
-                    }`} />
-                  </div>
-                  <h4 className="font-semibold text-slate-900 mb-1">{benefit.title}</h4>
-                  <p className="text-sm text-slate-600">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
+  </div>
+</section>
 
       {/* Tax Brackets Section */}
       <section className="py-16 bg-white">

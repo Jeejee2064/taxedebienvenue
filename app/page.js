@@ -433,6 +433,87 @@ export default function GlobalHomePage() {
           </div>
         </div>
       </section>
+{/* 4.5 CTA FORM */}
+<section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
+  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+    {/* HEADER */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mb-16 text-center"
+    >
+      <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+        Obtenez votre stratégie personnalisée
+      </h2>
+      <p className="mx-auto max-w-3xl text-lg text-slate-300">
+        Comparez les meilleures options de financement pour absorber le coût de votre taxe de bienvenue.
+      </p>
+    </motion.div>
+
+    {/* CARD */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="rounded-3xl bg-white p-5 shadow-2xl md:p-10"
+    >
+      {/* FORM */}
+        <iframe
+          title="Achat futur"
+          aria-label="Achat futur"
+          src="https://forms.zohopublic.ca/hypothequesca1/form/Achatfutur/formperma/xrnwQ82JU7effpcL7lo8ShLkRkESAvzGNmBWLB_hpNM"
+          className="w-full rounded-xl h-[85vh] md:h-[75vh] lg:h-[70vh]"
+          style={{ border: "none" }}
+        />
+
+      {/* TRUST / BENEFITS */}
+      <div className="mt-14 grid gap-8 md:grid-cols-3">
+        {[
+          {
+            title: "Sans engagement",
+            desc: "Analyse gratuite, aucune obligation de poursuivre.",
+            color: "green",
+          },
+          {
+            title: "Accès à 20+ prêteurs",
+            desc: "Banques, coopératives et prêteurs alternatifs.",
+            color: "blue",
+          },
+          {
+            title: "Réponse rapide",
+            desc: "Un courtier vous contacte sous 24h ouvrables.",
+            color: "purple",
+          },
+        ].map((item, idx) => (
+          <div key={idx} className="text-center">
+            <div
+              className={`mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full ${
+                item.color === "green"
+                  ? "bg-green-100 text-green-600"
+                  : item.color === "blue"
+                  ? "bg-blue-100 text-blue-600"
+                  : "bg-purple-100 text-purple-600"
+              }`}
+            >
+              <CheckCircle className="h-6 w-6" />
+            </div>
+            <h4 className="mb-1 font-semibold text-slate-900">
+              {item.title}
+            </h4>
+            <p className="text-sm text-slate-600">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* 5. FINAL CTA */}
       <section className="py-20 bg-blue-600 text-white">
